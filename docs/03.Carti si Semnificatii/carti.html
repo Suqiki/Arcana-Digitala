@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cărți și Semnificații Tarot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="carti.css">
+    <link rel="icon" type="image/x-icon" href="../Imagini/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <script>
+        // Se execută imediat la încărcare pentru a seta tema înainte de randare
+        (function () {
+            const savedTheme = localStorage.getItem("theme");
+            const root = document.documentElement;
+            if (savedTheme === "light") {
+                root.classList.add("light-mode");
+            } else if (savedTheme === "dark") {
+                root.classList.remove("light-mode");
+            } else {
+                // Dacă nu e salvat nimic, folosim preferința sistemului
+                const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+                if (prefersLight) {
+                    root.classList.add('light-mode');
+                }
+            }
+        })();
+    </script>
+
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="../01.Main Page/Main.html">Acasă</a></li>
+            <li><a href="../02.Despre Tarot/DespreTarot.html">Despre Tarot</a></li>
+            <li class="dropdown">
+                <a href="../03.Carti si Semnificatii/carti.html" class="active">Cărți și Semnificații</a>
+                <span class="dropdown-toggle">▾</span> <!-- toggle separat -->
+                <ul class="dropdown-content">
+                    <li><a href="../03.Carti si Semnificatii/carti.html#arcane-majore">Arcane Majore</a></li>
+                    <li class="dropdown-sub">
+                        <a href="../03.Carti si Semnificatii/carti.html#arcane-minore">Arcane Minore</a>
+                        <span class="sub-toggle">▾</span> <!-- toggle separat, acum pe dreapta -->
+                        <ul class="dropdown-subcontent">
+                            <li><a href="../03.Carti si Semnificatii/carti.html#cupe">Cupe</a></li>
+                            <li><a href="../03.Carti si Semnificatii/carti.html#bate">Bâte</a></li>
+                            <li><a href="../03.Carti si Semnificatii/carti.html#monede">Monede</a></li>
+                            <li><a href="../03.Carti si Semnificatii/carti.html#spada">Spade</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="../04.Spreads/Spreads.html">Spreads</a></li>
+            <li><a href="../05.OurCards/OurCards.html">Our Cards</a></li>
+        </ul>
+
+        <button id="themeToggle">🌙</button>
+        <button id="hamburger">&#9776;</button>
+
+    </nav>
+
+    <section class="patrat">
+        <div class="intro-container">
+            <h1>Cărți și Semnificații</h1>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="cardSearch" placeholder="Caută o carte">
+        </div>
+
+        <main class="card-sections">
+
+            <h2 class="section-title" id="arcane-majore">Arcane Majore</h2>
+            <div class="carti-grid">
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/00-TheFool.jpg" alt="The Fool">
+                    <h3>Nebunul (The Fool)</h3>
+                    <p><strong>Upright:</strong> inocență, noi începuturi, spirit liber</p>
+                    <p><strong>Reversed:</strong> necugetare, naivitate, riscuri inutile</p>
+                    <a href="ArcaneMajore/00.Fool.html">Mai multe detalii</a>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/01-TheMagician.jpg" alt="The Magician">
+                    <h3>Magicianul (The Magician)</h3>
+                    <p><strong>Upright:</strong> manifestare, voință, putere personală</p>
+                    <p><strong>Reversed:</strong> manipulare, blocaje, talent irosit</p>
+                    <a href="ArcaneMajore/01.Magician.html">Mai multe detalii</a>
+
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/02-TheHighPriestess.jpg" alt="The High Priestess">
+                    <h3>Marea Preoteasă</h3>
+                    <p><strong>Upright:</strong> intuiție, mister, înțelepciune interioară</p>
+                    <p><strong>Reversed:</strong> secrete, confuzie, intuiție ignorată</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/03-TheEmpress.jpg" alt="The Empress">
+                    <h3>Împărăteasa (The Empress)</h3>
+                    <p><strong>Upright:</strong> abundență, fertilitate, creativitate</p>
+                    <p><strong>Reversed:</strong> blocaje creative, dependență, stagnare</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/04-TheEmperor.jpg" alt="The Emperor">
+                    <h3>Împăratul (The Emperor)</h3>
+                    <p><strong>Upright:</strong> autoritate, structură, stabilitate</p>
+                    <p><strong>Reversed:</strong> tiranie, rigiditate, lipsă de control</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/05-TheHierophant.jpg" alt="The Hierophant">
+                    <h3>Hierofantul (The Hierophant)</h3>
+                    <p><strong>Upright:</strong> tradiție, cunoaștere, ghidare spirituală</p>
+                    <p><strong>Reversed:</strong> rebeliune, reguli rupte, dogmă respinsă</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/06-TheLovers.jpg" alt="The Lovers">
+                    <h3>Îndrăgostiții (The Lovers)</h3>
+                    <p><strong>Upright:</strong> uniune, alegere, armonie</p>
+                    <p><strong>Reversed:</strong> dezechilibru, neînțelegeri, alegeri greșite</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/07-TheChariot.jpg" alt="The Chariot">
+                    <h3>Carul (The Chariot)</h3>
+                    <p><strong>Upright:</strong> voință, succes, determinare</p>
+                    <p><strong>Reversed:</strong> lipsă de direcție, impulsivitate, conflicte</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/08-Strength.jpg" alt="Strength">
+                    <h3>Puterea (Strength)</h3>
+                    <p><strong>Upright:</strong> curaj, compasiune, autocontrol</p>
+                    <p><strong>Reversed:</strong> nesiguranță, lipsă de curaj, slăbiciune interioară</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/09-TheHermit.jpg" alt="The Hermit">
+                    <h3>Sihastrul (The Hermit)</h3>
+                    <p><strong>Upright:</strong> introspecție, înțelepciune, căutare personală</p>
+                    <p><strong>Reversed:</strong> izolare, rătăcire, evitare</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/10-WheelOfFortune.jpg" alt="Wheel of Fortune">
+                    <h3>Roata Norocului (Wheel of Fortune)</h3>
+                    <p><strong>Upright:</strong> schimbare, destin, noroc</p>
+                    <p><strong>Reversed:</strong> ghinion, stagnare, rezistență la schimbare</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/11-Justice.jpg" alt="Justice">
+                    <h3>Dreptatea (Justice)</h3>
+                    <p><strong>Upright:</strong> echilibru, adevăr, responsabilitate</p>
+                    <p><strong>Reversed:</strong> injustiție, părtinire, consecințe evitate</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/12-TheHangedMan.jpg" alt="The Hanged Man">
+                    <h3>Spânzuratul (The Hanged Man)</h3>
+                    <p><strong>Upright:</strong> perspectivă nouă, sacrificiu, acceptare</p>
+                    <p><strong>Reversed:</strong> blocaj, rezistență, stagnare</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/13-Death.jpg" alt="Death">
+                    <h3>Moartea (Death)</h3>
+                    <p><strong>Upright:</strong> transformare, final, renaștere</p>
+                    <p><strong>Reversed:</strong> frică de schimbare, stagnare, rezistență</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/14-Temperance.jpg" alt="Temperance">
+                    <h3>Temperanța (Temperance)</h3>
+                    <p><strong>Upright:</strong> armonie, echilibru, vindecare</p>
+                    <p><strong>Reversed:</strong> exces, dezechilibru, haos</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/15-TheDevil.jpg" alt="The Devil">
+                    <h3>Diavolul (The Devil)</h3>
+                    <p><strong>Upright:</strong> atașament, tentație, limitări</p>
+                    <p><strong>Reversed:</strong> eliberare, conștientizare, detașare</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/16-TheTower.jpg" alt="The Tower">
+                    <h3>Turnul (The Tower)</h3>
+                    <p><strong>Upright:</strong> colaps, revelație, schimbare bruscă</p>
+                    <p><strong>Reversed:</strong> frică de schimbare, evitarea adevărului, consecințe amânate</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/17-TheStar.jpg" alt="The Star">
+                    <h3>Steaua (The Star)</h3>
+                    <p><strong>Upright:</strong> speranță, inspirație, vindecare</p>
+                    <p><strong>Reversed:</strong> îndoială, pierderea direcției, lipsă de credință</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/18-TheMoon.jpg" alt="The Moon">
+                    <h3>Luna (The Moon)</h3>
+                    <p><strong>Upright:</strong> intuiție, iluzie, subconștient</p>
+                    <p><strong>Reversed:</strong> revelație, anxietate, confuzie</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/19-TheSun.jpg" alt="The Sun">
+                    <h3>Soarele (The Sun)</h3>
+                    <p><strong>Upright:</strong> bucurie, succes, vitalitate</p>
+                    <p><strong>Reversed:</strong> pesimism, blocaje temporare, egoism</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/20-Judgement.jpg" alt="Judgement">
+                    <h3>Judecata (Judgement)</h3>
+                    <p><strong>Upright:</strong> trezire, analiză, renaștere</p>
+                    <p><strong>Reversed:</strong> îndoială, critică excesivă, frică de schimbare</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Majore/21-TheWorld.jpg" alt="The World">
+                    <h3>Lumea (The World)</h3>
+                    <p><strong>Upright:</strong> completare, realizare, integrare</p>
+                    <p><strong>Reversed:</strong> cicluri neterminate, obstacole, stagnare</p>
+                </div>
+            </div>
+
+
+            <h2 class="section-title" id="arcane-minore">Arcane Minore</h2>
+            <h3 class="section-title-sub" id="cupe">Cupe</h3>
+            <div class="carti-grid">
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Cup/Cups01.jpg">
+                    <h3>Asul de Cupe</h3>
+                    <p><strong>Upright:</strong> iubire, emoții noi, vindecare</p>
+                    <p><strong>Reversed:</strong> blocaje emoționale, tristețe</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Cup/Cups02.jpg">
+                    <h3>Doi de Cupe</h3>
+                    <p><strong>Upright:</strong> conexiune, parteneriat, armonie</p>
+                    <p><strong>Reversed:</strong> dezechilibru, rupturi, neînțelegeri</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Cup/Cups03.jpg">
+                    <h3>Trei de Cupe</h3>
+                    <p><strong>Upright:</strong> sărbătoare, prietenie, bucurie</p>
+                    <p><strong>Reversed:</strong> rivalitate, gelozie, conflicte</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Cup/Cups04.jpg">
+                    <h3>Patru de Cupe</h3>
+                    <p><strong>Upright:</strong> reflecție, reevaluare, plictiseală</p>
+                    <p><strong>Reversed:</strong> oportunități noi, redeschidere emoțională</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Cup/Cups05.jpg">
+                    <h3>Cinci de Cupe</h3>
+                    <p><strong>Upright:</strong> pierdere, regret, dezamăgire</p>
+                    <p><strong>Reversed:</strong> acceptare, vindecare, reconectare</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Cup/Cups06.jpg">
+                    <h3>Șase de Cupe</h3>
+                    <p><strong>Upright:</strong> nostalgie, amintiri, inocență</p>
+                    <p><strong>Reversed:</strong> stagnare, blocaj emoțional, trecut obsesiv</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Cup/Cups07.jpg">
+                    <h3>Șapte de Cupe</h3>
+                    <p><strong>Upright:</strong> vise, iluzii, alegeri</p>
+                    <p><strong>Reversed:</strong> confuzie, iluzii destrămate, decizii forțate</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Cup/Cups08.jpg">
+                    <h3>Opt de Cupe</h3>
+                    <p><strong>Upright:</strong> renunțare, căutare spirituală, plecare</p>
+                    <p><strong>Reversed:</strong> stagnare, frică de schimbare, evitarea realității</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Cup/Cups09.jpg">
+                    <h3>Nouă de Cupe</h3>
+                    <p><strong>Upright:</strong> satisfacție, dorințe împlinite, bucurie</p>
+                    <p><strong>Reversed:</strong> nemulțumire, dorințe neîmplinite, superficialitate</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Cup/Cups10.jpg">
+                    <h3>Zece de Cupe</h3>
+                    <p><strong>Upright:</strong> armonie, fericire în familie, iubire deplină</p>
+                    <p><strong>Reversed:</strong> conflicte familiale, dezamăgire, rupturi emoționale</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Cup/Cups11.jpg">
+                    <h3>Valet de Cupe</h3>
+                    <p><strong>Upright:</strong> mesager emoțional, curiozitate, începuturi sentimentale</p>
+                    <p><strong>Reversed:</strong> imaturitate emoțională, dezamăgire</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Cup/Cups12.jpg">
+                    <h3>Cal de Cupe</h3>
+                    <p><strong>Upright:</strong> romantism, compasiune, aventură emoțională</p>
+                    <p><strong>Reversed:</strong> iluzii romantice, lipsă de maturitate emoțională</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Cup/Cups13.jpg">
+                    <h3>Regină de Cupe</h3>
+                    <p><strong>Upright:</strong> intuiție, empatie, înțelepciune emoțională</p>
+                    <p><strong>Reversed:</strong> sensibilitate excesivă, emoții nerezolvate</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Cup/Cups14.jpg">
+                    <h3>Rege de Cupe</h3>
+                    <p><strong>Upright:</strong> control emoțional, compasiune, echilibru</p>
+                    <p><strong>Reversed:</strong> manipulare emoțională, detașare</p>
+                </div>
+
+            </div>
+
+
+            <h3 class="section-title-sub" id="bate">Bâte</h3>
+            <div class="carti-grid">
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Wand/Wands01.jpg" alt="Asul de Bâte">
+                    <h3>Asul de Bâte</h3>
+                    <p><strong>Upright:</strong> inspirație, pasiune, energie nouă</p>
+                    <p><strong>Reversed:</strong> lipsă de motivație, ezitare</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Wand/Wands02.jpg" alt="Doi de Bâte">
+                    <h3>Doi de Bâte</h3>
+                    <p><strong>Upright:</strong> planificare, viziune, control</p>
+                    <p><strong>Reversed:</strong> frică de risc, stagnare</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Wand/Wands03.jpg" alt="Trei de Bâte">
+                    <h3>Trei de Bâte</h3>
+                    <p><strong>Upright:</strong> progres, oportunități, expansiune</p>
+                    <p><strong>Reversed:</strong> întârziere, lipsă de direcție, așteptări frustrate</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Wand/Wands04.jpg" alt="Patru de Bâte">
+                    <h3>Patru de Bâte</h3>
+                    <p><strong>Upright:</strong> celebrare, stabilitate, armonie</p>
+                    <p><strong>Reversed:</strong> instabilitate, conflicte, amânări</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Wand/Wands05.jpg" alt="Cinci de Bâte">
+                    <h3>Cinci de Bâte</h3>
+                    <p><strong>Upright:</strong> competiție, provocări, dezacorduri</p>
+                    <p><strong>Reversed:</strong> conflicte rezolvate, cooperare, evitarea problemelor</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Wand/Wands06.jpg" alt="Șase de Bâte">
+                    <h3>Șase de Bâte</h3>
+                    <p><strong>Upright:</strong> succes, recunoaștere, victorie</p>
+                    <p><strong>Reversed:</strong> eșec temporar, lipsă de recunoaștere</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Wand/Wands07.jpg" alt="Șapte de Bâte">
+                    <h3>Șapte de Bâte</h3>
+                    <p><strong>Upright:</strong> apărare, perseverență, curaj</p>
+                    <p><strong>Reversed:</strong> cedează, vulnerabilitate, presiune</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Wand/Wands08.jpg" alt="Opt de Bâte">
+                    <h3>Opt de Bâte</h3>
+                    <p><strong>Upright:</strong> viteză, progres rapid, călătorii</p>
+                    <p><strong>Reversed:</strong> întârzieri, blocaje, frustrare</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Wand/Wands09.jpg" alt="Nouă de Bâte">
+                    <h3>Nouă de Bâte</h3>
+                    <p><strong>Upright:</strong> rezistență, curaj, prudență</p>
+                    <p><strong>Reversed:</strong> epuizare, nesiguranță, pesimism</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Wand/Wands10.jpg" alt="Zece de Bâte">
+                    <h3>Zece de Bâte</h3>
+                    <p><strong>Upright:</strong> responsabilități, povară, muncă intensă</p>
+                    <p><strong>Reversed:</strong> eliberare, ușurare, depășirea obstacolelor</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Wand/Wands11.jpg" alt="Page de Bâte">
+                    <h3>Paget de Bâte</h3>
+                    <p><strong>Upright:</strong> curiozitate, energie tânără, entuziasm</p>
+                    <p><strong>Reversed:</strong> lipsă de direcție, imaturitate, impulsivitate</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Wand/Wands12.jpg" alt="Knight de Bâte">
+                    <h3>Cavalerul de Bâte</h3>
+                    <p><strong>Upright:</strong> aventură, curaj, pasiune</p>
+                    <p><strong>Reversed:</strong> impulsivitate, imprudență, agresivitate</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Wand/Wands13.jpg" alt="Queen de Bâte">
+                    <h3>Regina de Bâte</h3>
+                    <p><strong>Upright:</strong> independență, încredere, inspirație</p>
+                    <p><strong>Reversed:</strong> dominare, gelozie, impetuozitate</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Wand/Wands14.jpg" alt="King de Bâte">
+                    <h3>Regele de Bâte</h3>
+                    <p><strong>Upright:</strong> lider, viziune, curaj</p>
+                    <p><strong>Reversed:</strong> tiranie, încăpățânare, impredictibilitate</p>
+                </div>
+
+
+            </div>
+
+
+            <h3 class="section-title-sub" id="monede">Monede</h3>
+            <div class="carti-grid">
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Pentacle/Pentacles01.jpg" alt="Asul de Monede">
+                    <h3>Asul de Monede</h3>
+                    <p><strong>Upright:</strong> oportunitate, prosperitate</p>
+                    <p><strong>Reversed:</strong> instabilitate financiară</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Pentacle/Pentacles02.jpg" alt="Doi de Monede">
+                    <h3>Doi de Monede</h3>
+                    <p><strong>Upright:</strong> echilibru, adaptabilitate</p>
+                    <p><strong>Reversed:</strong> haos, prea multe responsabilități</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Pentacle/Pentacles03.jpg" alt="Trei de Monede">
+                    <h3>Trei de Monede</h3>
+                    <p><strong>Upright:</strong> muncă în echipă, abilitate, recunoaștere</p>
+                    <p><strong>Reversed:</strong> lipsă de colaborare, conflict, slăbiciune</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Pentacle/Pentacles04.jpg" alt="Patru de Monede">
+                    <h3>Patru de Monede</h3>
+                    <p><strong>Upright:</strong> stabilitate, securitate, conservatorism</p>
+                    <p><strong>Reversed:</strong> posesivitate, frică de pierdere, stagnare</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Pentacle/Pentacles05.jpg" alt="Cinci de Monede">
+                    <h3>Cinci de Monede</h3>
+                    <p><strong>Upright:</strong> dificultăți financiare, pierdere, lipsuri</p>
+                    <p><strong>Reversed:</strong> recuperare, sprijin, îmbunătățire</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Pentacle/Pentacles06.jpg" alt="Șase de Monede">
+                    <h3>Șase de Monede</h3>
+                    <p><strong>Upright:</strong> generozitate, echilibru, ajutor</p>
+                    <p><strong>Reversed:</strong> dezechilibru, egoism, lipsă de sprijin</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Pentacle/Pentacles07.jpg" alt="Șapte de Monede">
+                    <h3>Șapte de Monede</h3>
+                    <p><strong>Upright:</strong> răbdare, planificare, investiție</p>
+                    <p><strong>Reversed:</strong> lipsă de progres, frustrare, răbdare testată</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Pentacle/Pentacles08.jpg" alt="Opt de Monede">
+                    <h3>Opt de Monede</h3>
+                    <p><strong>Upright:</strong> muncă asiduă, perfecționare, dedicare</p>
+                    <p><strong>Reversed:</strong> superficialitate, lipsă de progres, greșeli</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Pentacle/Pentacles09.jpg" alt="Nouă de Monede">
+                    <h3>Nouă de Monede</h3>
+                    <p><strong>Upright:</strong> independență, succes, siguranță</p>
+                    <p><strong>Reversed:</strong> pierdere, izolare, invidie</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Pentacle/Pentacles10.jpg" alt="Zece de Monede">
+                    <h3>Zece de Monede</h3>
+                    <p><strong>Upright:</strong> moștenire, stabilitate, familie prosperă</p>
+                    <p><strong>Reversed:</strong> pierderi, conflicte familiale, instabilitate</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Pentacle/Pentacles11.jpg" alt="Page de Monede">
+                    <h3>Paget de Monede</h3>
+                    <p><strong>Upright:</strong> învățare, oportunități, responsabilitate</p>
+                    <p><strong>Reversed:</strong> lipsă de focus, neglijență, superficialitate</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Pentacle/Pentacles12.jpg" alt="Knight de Monede">
+                    <h3>Cavalerul de Monede</h3>
+                    <p><strong>Upright:</strong> perseverență, fiabilitate, muncă constantă</p>
+                    <p><strong>Reversed:</strong> rigiditate, stagnare, rutină excesivă</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Pentacle/Pentacles13.jpg" alt="Queen de Monede">
+                    <h3>Regina de Monede</h3>
+                    <p><strong>Upright:</strong> grijă, generozitate, prosperitate</p>
+                    <p><strong>Reversed:</strong> gelozie, exces de control, materialism</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Pentacle/Pentacles14.jpg" alt="King de Monede">
+                    <h3>Regele de Monede</h3>
+                    <p><strong>Upright:</strong> stabilitate, succes, responsabilitate</p>
+                    <p><strong>Reversed:</strong> rigiditate, aroganță, lipsă de empatie</p>
+                </div>
+
+
+            </div>
+
+
+            <h3 class="section-title-sub" id="spada">Spade</h3>
+            <div class="carti-grid">
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Sword/Swords01.jpg" alt="Asul de Spade">
+                    <h3>Asul de Spade</h3>
+                    <p><strong>Upright:</strong> adevăr, claritate, inteligență</p>
+                    <p><strong>Reversed:</strong> confuzie, nedreptate</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Sword/Swords02.jpg" alt="Doi de Spade">
+                    <h3>Doi de Spade</h3>
+                    <p><strong>Upright:</strong> decizie dificilă, blocaj</p>
+                    <p><strong>Reversed:</strong> tensiuni, adevăr ascuns</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Sword/Swords03.jpg" alt="Trei de Spade">
+                    <h3>Trei de Spade</h3>
+                    <p><strong>Upright:</strong> durere, despărțire, dezamăgire</p>
+                    <p><strong>Reversed:</strong> vindecare, eliberare, acceptare</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Sword/Swords04.jpg" alt="Patru de Spade">
+                    <h3>Patru de Spade</h3>
+                    <p><strong>Upright:</strong> odihnă, recuperare, reflecție</p>
+                    <p><strong>Reversed:</strong> neliniște, stagnare, izolare</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Sword/Swords05.jpg" alt="Cinci de Spade">
+                    <h3>Cinci de Spade</h3>
+                    <p><strong>Upright:</strong> conflict, pierdere, competiție</p>
+                    <p><strong>Reversed:</strong> reconciliere, regret, compromis</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Sword/Swords06.jpg" alt="Șase de Spade">
+                    <h3>Șase de Spade</h3>
+                    <p><strong>Upright:</strong> tranziție, călătorie, vindecare</p>
+                    <p><strong>Reversed:</strong> stagnare, dificultăți, rezistență</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Sword/Swords07.jpg" alt="Șapte de Spade">
+                    <h3>Șapte de Spade</h3>
+                    <p><strong>Upright:</strong> stratagemă, planuri ascunse, precauție</p>
+                    <p><strong>Reversed:</strong> deconspirare, asumarea responsabilității, sinceritate</p>
+                </div>
+
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Sword/Swords08.jpg" alt="Opt de Spade">
+                    <h3>Opt de Spade</h3>
+                    <p><strong>Upright:</strong> restricție, limitare, blocaj mental</p>
+                    <p><strong>Reversed:</strong> eliberare, claritate, depășirea fricii</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Sword/Swords09.jpg" alt="Nouă de Spade">
+                    <h3>Nouă de Spade</h3>
+                    <p><strong>Upright:</strong> anxietate, vinovăție, coșmaruri</p>
+                    <p><strong>Reversed:</strong> ameliorare, acceptare, curaj</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Sword/Swords10.jpg" alt="Zece de Spade">
+                    <h3>Zece de Spade</h3>
+                    <p><strong>Upright:</strong> sfârșit dureros, trădare, pierdere</p>
+                    <p><strong>Reversed:</strong> recuperare, reziliență, nou început</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Sword/Swords11.jpg" alt="Valet de Spade">
+                    <h3>Valet de Spade</h3>
+                    <p><strong>Upright:</strong> curiozitate, vigilență, mesaje</p>
+                    <p><strong>Reversed:</strong> neînțelegeri, imaturitate, minciuni</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Sword/Swords12.jpg" alt="Cavaler de Spade">
+                    <h3>Cavaler de Spade</h3>
+                    <p><strong>Upright:</strong> acțiune rapidă, determinare, conflict</p>
+                    <p><strong>Reversed:</strong> impulsivitate, agresivitate, neatenție</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Sword/Swords13.jpg" alt="Regină de Spade">
+                    <h3>Regină de Spade</h3>
+                    <p><strong>Upright:</strong> claritate mentală, obiectivitate, independență</p>
+                    <p><strong>Reversed:</strong> răceală, cinism, cruzime</p>
+                </div>
+
+                <div class="carte">
+                    <img src="../Imagini/Tarot/Arcane Minore/Sword/Swords14.jpg" alt="Rege de Spade">
+                    <h3>Rege de Spade</h3>
+                    <p><strong>Upright:</strong> judecată dreaptă, strategie, autoritate</p>
+                    <p><strong>Reversed:</strong> tiranie, manipulare, rigiditate</p>
+                </div>
+
+
+        </main>
+    </section>
+
+    <div class="social-box">
+        <a href="https://facebook.com" target="_blank">
+            <img src="../Imagini/Facebook_f_logo_(2019).png" alt="Facebook">
+        </a>
+        <a href="https://instagram.com" target="_blank">
+            <img src="../Imagini/Instagram_logo_2022.png" alt="Instagram">
+        </a>
+        <a href="https://twitter.com" target="_blank">
+            <img src="../Imagini/twitter_x.png" alt="Twitter/X">
+        </a>
+    </div>
+
+    <script src="carti.js"></script>
+    <!-- Butoane Scroll -->
+    <button id="scrollTop" class="scroll-btn">⬆️</button>
+    <button id="scrollBottom" class="scroll-btn">⬇️</button>
+
+    
+
+</body>
+
+</html>

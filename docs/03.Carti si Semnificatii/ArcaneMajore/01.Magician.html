@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cărți și Semnificații Tarot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../carti.css">
+    <link rel="icon" type="image/x-icon" href="../../Imagini/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <script>
+        // Se execută imediat la încărcare pentru a seta tema înainte de randare
+        (function () {
+            const savedTheme = localStorage.getItem("theme");
+            const root = document.documentElement;
+            if (savedTheme === "light") {
+                root.classList.add("light-mode");
+            } else if (savedTheme === "dark") {
+                root.classList.remove("light-mode");
+            } else {
+                // Dacă nu e salvat nimic, folosim preferința sistemului
+                const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+                if (prefersLight) {
+                    root.classList.add('light-mode');
+                }
+            }
+        })();
+    </script>
+
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="../../01.Main Page/Main.html">Acasă</a></li>
+            <li><a href="../../02.Despre Tarot/DespreTarot.html">Despre Tarot</a></li>
+            <li class="dropdown">
+                <a href="../../03.Carti si Semnificatii/carti.html" class="active">Cărți și Semnificații</a>
+                <span class="dropdown-toggle">▾</span> <!-- toggle separat -->
+                <ul class="dropdown-content">
+                    <li><a href="../../03.Carti si Semnificatii/carti.html#arcane-majore">Arcane Majore</a></li>
+                    <li class="dropdown-sub">
+                        <a href="../../03.Carti si Semnificatii/carti.html#arcane-minore">Arcane Minore</a>
+                        <span class="sub-toggle">▾</span> <!-- toggle separat, acum pe dreapta -->
+                        <ul class="dropdown-subcontent">
+                            <li><a href="../../03.Carti si Semnificatii/carti.html#cupe">Cupe</a></li>
+                            <li><a href="../../03.Carti si Semnificatii/carti.html#bate">Bâte</a></li>
+                            <li><a href="../../03.Carti si Semnificatii/carti.html#monede">Monede</a></li>
+                            <li><a href="../../03.Carti si Semnificatii/carti.html#spada">Spade</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="../../04.Spreads/Spreads.html">Spreads</a></li>
+            <li><a href="../../05.OurCards/OurCards.html">Our Cards</a></li>
+        </ul>
+
+        <button id="themeToggle">🌙</button>
+        <button id="hamburger">&#9776;</button>
+
+    </nav>
+
+    <section class="patrat">
+
+        <main class="card-sections">
+
+                <h3 class="card-title-main">1. Magicianul (The Magician) - Arhetipul Voinței</h3>
+                <div class="card-details-content">
+                    <img src="../../Imagini/Tarot/Arcane Majore/01-TheMagician.jpg" alt="Imaginea Cărții Magicianul" class="detail-card-img">
+                    <div class="text-content">
+
+                        <h4>Descriere și Simbolism</h4>
+                        <p>Magicianul poartă numărul <strong>1</strong> și reprezintă puterea de a acționa și de a transforma ideile în realitate. El stă în fața unei mese, având deasupra capului semnul infinitului. Pe masă se află cele patru elemente (cupă, băț, monedă și sabie), simbolizând uneltele necesare pentru manifestare.</p>
+                        <p>Această carte îndeamnă la folosirea abilităților și resurselor interioare pentru a crea viitorul dorit. Este un simbol al voinței, concentrării și al puterii personale de a începe noi proiecte.</p>
+
+                        <h4>Semnificații Cheie</h4>
+                        <ul>
+                            <li><strong>Poziția Normală (Upright):</strong> Manifestare, voință, putere personală, acțiune, inspirație, control, resurse.</li>
+                            <li><strong>Poziția Întoarsă (Reversed):</strong> Manipulare, blocaje creative, talent irosit, înșelătorie, lipsă de voință, confuzie.</li>
+                        </ul>
+                    </div>
+                </div>
+
+        </main>
+    </section>
+
+    <script src="../carti.js"></script>
+
+    
+
+</body>
+
+</html>

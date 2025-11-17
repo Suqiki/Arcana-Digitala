@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tarot Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Spreads.css">
+    <link rel="icon" type="image/x-icon" href="../Imagini/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <script>
+        // Se execută imediat la încărcare
+        (function () {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "light") {
+                document.documentElement.classList.add("light-mode");
+            } else if (savedTheme === "dark") {
+                document.documentElement.classList.remove("light-mode");
+            } else {
+                // Dacă nu e salvat nimic, folosim preferința sistemului
+                const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+                if (prefersLight) {
+                    document.documentElement.classList.add('light-mode');
+                }
+            }
+        })();
+    </script>
+
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="../01.Main Page/Main.html">Acasă</a></li>
+            <li><a href="../02.Despre Tarot/DespreTarot.html">Despre Tarot</a></li>
+            <li class="dropdown">
+                <a href="../03.Carti si Semnificatii/carti.html">Cărți și Semnificații</a>
+                <span class="dropdown-toggle">▾</span>
+                <ul class="dropdown-content">
+                    <li><a href="../03.Carti si Semnificatii/carti.html#arcane-majore">Arcane Majore</a></li>
+                    <li class="dropdown-sub">
+                        <a href="../03.Carti si Semnificatii/carti.html#arcane-minore">Arcane Minore</a>
+                        <span class="sub-toggle">▾</span>
+                        <ul class="dropdown-subcontent">
+                            <li><a href="../03.Carti si Semnificatii/carti.html#cupe">Cupe</a></li>
+                            <li><a href="../03.Carti si Semnificatii/carti.html#bate">Bâte</a></li>
+                            <li><a href="../03.Carti si Semnificatii/carti.html#monede">Monede</a></li>
+                            <li><a href="../03.Carti si Semnificatii/carti.html#spada">Spade</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+            <li><a href="../04.Spreads/Spreads.html" class="active">Spreads</a></li>
+            <li><a href="../05.OurCards/OurCards.html">Our Cards</a></li>
+        </ul>
+
+        <button id="themeToggle">🌙</button>
+        <button id="hamburger">&#9776;</button>
+
+    </nav>
+
+    <div class="patrat">
+        <main class="spread-sections">
+
+            <h2 class="section-title" id="prezentare-generala">Etalări Tarot: Concepte Generale</h2>
+
+            <section class="spread-details general-info">
+                <div class="spread-text-content">
+                    <p>Modul de așezare a cărților pentru a afla răspunsul la o întrebare, ordinea lor de extragere și
+                        așezarea pe masă, se numește <strong>etalare</strong>, <strong>citire</strong> sau
+                        <strong>tiraj</strong> (termenul vechi clasic).</p>
+                    <p>Etalările pot fi foarte simple (extragerea unei singure cărți) sau complexe (etalarea astrologică
+                        cu 12 cărți sau etalarea țigănească cu 21 de cărți). Cu cât sunt mai multe cărți, cu atât
+                        etalarea devine mai complicată, deoarece informațiile trebuie conectate și armonizate, deși se
+                        obțin mai multe detalii.</p>
+
+                    <p>Chiar și o singură carte poate fi dificil de interpretat, deoarece are mai multe semnificații și
+                        depinde de:</p>
+                    <ul>
+                        <li>Întrebare</li>
+                        <li>Cărțile care o înconjoară</li>
+                        <li>Orientarea sa</li>
+                    </ul>
+
+                    <div class="video-responsive">
+                        <video 
+                        width="100%" 
+                        controls poster="../Video/1cards.jpg"
+                        class="local-video-player">
+
+                            <source src="../Video/How To Do a 1-Card Tarot Reading – Even if You’re Completely New to Tarot - Biddy Tarot (1080p, h264).mp4" type="video/mp4">
+
+                            Browserul tău nu suportă eticheta video.
+                        </video>
+                        <p class="video-caption">Tutorial (Începe de la 0:21): Etalarea cu o singură carte.</p>
+                    </div>
+                </div>
+            </section>
+
+            <h2 class="section-title" id="trei-carti">Etalarea cu Trei Cărți</h2>
+            <section class="spread-details">
+                <div class="spread-image-container">
+                    <img src="../Imagini/Etalari/etalari_3.png" alt="Etalare cu trei cărți" class="spread-img">
+                </div>
+                <div class="spread-text-content">
+                    <h3>Trecut, Prezent, Viitor</h3>
+                    <p>Aceasta este o etalare populară și rapidă, ideală pentru a înțelege evoluția unei situații, de la
+                        rădăcinile problemei la deznodământ.</p>
+
+                    <h4>Pași și Semnificații</h4>
+                    <p>După punerea întrebării și amestecarea cărților, se așază trei cărți cu fața în jos, care se vor
+                        întoarce treptat și vor fi citite.</p>
+                    <ul>
+                        <li><strong>Poziție 1:</strong> Trecutul / Rădăcina problemei.</li>
+                        <li><strong>Poziție 2:</strong> Prezentul / Situația curentă.</li>
+                        <li><strong>Poziție 3:</strong> Viitorul Probabil / Rezultatul deznodământului.</li>
+                    </ul>
+
+                    <div class="example-box">
+                        <h4>Exemplu de Interpretare</h4>
+                        <p>Să presupunem că întrebarea este: „Care va fi situația profesională?” și tragem cărțile: Opt
+                            de Bâte (Trecut), Nouă de Bâte (Prezent), Cinci de Bâte (Viitor), în această ordine.</p>
+                        <p>Interpretarea ar fi că: "În trecut ai avut vești bune și evenimente fericite la locul de
+                            muncă, ai călătorit mult și chiar te-ai îndrăgostit de cineva din mediul profesional; în
+                            prezent îți este frică de ceva, îți iei precauții exagerate, ai multe gânduri, ești
+                            tensionat și ai multe îndoieli în suflet. Pentru viitor, vei concura cu cineva sau vei dori
+                            să te dovedească; vei avea și certuri și dispute și obstacole, dar datorită încăpățânării și
+                            mândriei tale excesive, le vei depăși."</p>
+                    </div>
+
+                    <div class="video-responsive">
+                        <video 
+                        width="100%" 
+                        controls poster="../Video/3cards.jpg"
+                        class="local-video-player">
+
+                            <source src="../Video/How to Do a 3-Card Tarot Reading - Biddy Tarot (1080p, h264).mp4" type="video/mp4">
+
+                            Browserul tău nu suportă eticheta video.
+                        </video>
+                        <p class="video-caption">Tutorial (Începe de la 0:21): Etalarea cu o singură carte.</p>
+                    </div>
+                </div>
+            </section>
+
+            <h2 class="section-title" id="patru-carti">Etalarea cu Patru Cărți</h2>
+            <section class="spread-details">
+                <div class="spread-image-container">
+                    <img src="../Imagini/Etalari/etalari_4.png" alt="Etalare cu patru cărți" class="spread-img">
+                </div>
+                <div class="spread-text-content">
+                    <h3>Contra de Sine și Tactică</h3>
+                    <p>Această etalare oferă o analiză a influențelor interioare și exterioare, avertizând asupra
+                        blocajelor și oferind sfaturi concrete.</p>
+
+                    <h4>Semnificații Poziții</h4>
+                    <ul>
+                        <li><strong>Poziție 1:</strong> Individul / Argumentele pentru întrebarea propusă.</li>
+                        <li><strong>Poziție 2:</strong> Avertisment / Contra de sine. Ne avertizează în privința
+                            întrebării puse.</li>
+                        <li><strong>Poziție 3:</strong> Tactici / Sfaturi. Ne sfătuiește cu privire la tacticile pe care
+                            le putem scoate la înaintare. Aici putem vedea și dacă demersul nostru este o pierdere de
+                            timp și dacă avem șanse reale.</li>
+                        <li><strong>Poziție 4:</strong> Rezultatul / Deznodământul. Reprezintă rezultatul efortului
+                            nostru și implicit deznodământul.</li>
+                    </ul>
+                    <p>Există și cazuri când răspunsul final este evaziv sau pare rupt de context. Atunci se întâmplă să
+                        extragem cărți ajutătoare.</p>
+                </div>
+            </section>
+
+            <h2 class="section-title" id="zece-carti">Crucea Celtică (Etalare cu 10 Cărți)</h2>
+            <section class="spread-details">
+                <div class="spread-image-container">
+                    <img src="../Imagini/Etalari/etalari_10.png" alt="Etalare Crucea Celtică" class="spread-img">
+                </div>
+                <div class="spread-text-content">
+                    <h3>Cea mai Complexă Etalare Tradițională</h3>
+                    <p>Acest mod de etalare a cărților este destul de complex, nu este recomandat pentru persoanele care
+                        abia s-au apucat de citit tarot.</p>
+
+                    <h4>Semnificațiile Pozițiilor (1 - 10)</h4>
+                    <ul>
+                        <li><strong>Cartea 1 (Baza):</strong> Baza, esența problemei și chiar pe cel ce pune întrebarea.
+                        </li>
+                        <li><strong>Cartea 2 (Obstacol):</strong> Influența imediată asupra celui ce întreabă, dar și
+                            obstacolele ce îl așteaptă. Poziția orizontală descrie „încrucișarea” și arată o alternativă
+                            a întrebării.</li>
+                        <li><strong>Cartea 3 (Gânduri):</strong> Surprinde gândurile, planurile și ce gândește persoana
+                            referitor la întrebare.</li>
+                        <li><strong>Cartea 4 (Emoții):</strong> Sentimente, reprezintă emoțiile celui ce întreabă, dar
+                            și substratul subconștient al situației.</li>
+                        <li><strong>Cartea 5 (Trecut):</strong> Motivațiile și trecutul recent.</li>
+                        <li><strong>Cartea 6 (Viitor Apropiat):</strong> Arată evenimentele ce vor avea loc în viitorul
+                            apropiat.</li>
+                        <li><strong>Cartea 7 (Atitudine):</strong> Semnifică atitudinea celui ce întreabă, îl semnifică.
+                        </li>
+                        <li><strong>Cartea 8 (Mediu):</strong> Mediul înconjurător, factorii de mediu ce influențează
+                            situația respectivă.</li>
+                        <li><strong>Cartea 9 (Speranțe/Frici):</strong> Denotă fricile, speranțele, idealurile și
+                            dorințele celui ce întreabă.</li>
+                        <li><strong>Cartea 10 (Rezoluție):</strong> Arată rezoluția cea mai probabilă a situației,
+                            viitorul distant; considerată de unii cea mai importantă carte din etalare.</li>
+                    </ul>
+
+                    <div class="video-responsive">
+                        <video 
+                        width="100%" 
+                        controls poster="../Video/10cards.jpg"
+                        class="local-video-player">
+
+                            <source src="../Video/The Celtic Cross Tarot Spread for Beginners - Biddy Tarot (1080p, h264).mp4" type="video/mp4">
+
+                            Browserul tău nu suportă eticheta video.
+                        </video>
+                        <p class="video-caption">Tutorial (Începe de la 0:21): Etalarea cu o singură carte.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <div class="social-box">
+        <a href="https://facebook.com" target="_blank">
+            <img src="../Imagini/Facebook_f_logo_(2019).png" alt="Facebook">
+        </a>
+        <a href="https://instagram.com" target="_blank">
+            <img src="../Imagini/Instagram_logo_2022.png" alt="Instagram">
+        </a>
+        <a href="https://twitter.com" target="_blank">
+            <img src="../Imagini/twitter_x.png" alt="Twitter/X">
+        </a>
+    </div>
+    <script src="Spreads.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Tarot Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="DespreTarot_style.css">
+    <link rel="icon" type="image/x-icon" href="../Imagini/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <script>
+        // Se execută imediat la încărcare
+        (function () {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "light") {
+                document.documentElement.classList.add("light-mode");
+            } else if (savedTheme === "dark") {
+                document.documentElement.classList.remove("light-mode");
+            } else {
+                // Dacă nu e salvat nimic, folosim preferința sistemului
+                const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+                if (prefersLight) {
+                    document.documentElement.classList.add('light-mode');
+                }
+            }
+        })();
+    </script>
+
+
+</head>
+
+<body>
+
+    <!-- Bara de navigare -->
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="../01.Main Page/Main.html">Acasă</a></li>
+            <li><a href="../02.Despre Tarot/DespreTarot.html" class="active">Despre Tarot</a></li>
+            <li class="dropdown">
+                <a href="../03.Carti si Semnificatii/carti.html">Cărți și Semnificații</a>
+                <span class="dropdown-toggle">▾</span> <!-- toggle separat -->
+                <ul class="dropdown-content">
+                    <li><a href="../03.Carti si Semnificatii/carti.html#arcane-majore">Arcane Majore</a></li>
+                    <li class="dropdown-sub">
+                        <a href="../03.Carti si Semnificatii/carti.html#arcane-minore">Arcane Minore</a>
+                        <span class="sub-toggle">▾</span> <!-- toggle separat, acum pe dreapta -->
+                        <ul class="dropdown-subcontent">
+                            <li><a href="../03.Carti si Semnificatii/carti.html#cupe">Cupe</a></li>
+                            <li><a href="../03.Carti si Semnificatii/carti.html#bate">Bâte</a></li>
+                            <li><a href="../03.Carti si Semnificatii/carti.html#monede">Monede</a></li>
+                            <li><a href="../03.Carti si Semnificatii/carti.html#spada">Spade</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+
+
+            <li><a href="../04.Spreads/Spreads.html">Spreads</a></li>
+            <li><a href="../05.OurCards/OurCards.html">Our Cards</a></li>
+        </ul>
+
+        <!-- Buton Dark/Light -->
+        <button id="themeToggle">🌙</button>
+        <button id="hamburger">&#9776;</button>
+
+    </nav>
+
+    <!-- Pătratul central -->  
+    <div class="patrat">
+        <h1>Despre Tarot</h1>
+
+        <!-- Introducere -->
+        <p class="intro">
+            Tarotul, cunoscut și sub numele de <em>trionfi</em>, <em>tarocchi</em> sau <em>tarock</em>, 
+            este un pachet de 78 de cărți folosit încă din mijlocul secolului al XV-lea în diverse regiuni ale Europei, 
+            pentru jocuri precum <em>tarochinni</em> (Italia), <em>tarot français</em> (Franța) și <em>Königrufen</em> (Austria). 
+            Multe dintre aceste jocuri sunt practicate și astăzi, păstrând tradiția secolelor trecute.
+        </p>
+
+        <p class="intro">
+            Spre sfârșitul secolului al XVIII-lea, unele seturi de cărți de tarot au început să fie folosite și în scopuri 
+            de divinație, dând naștere formelor moderne de <strong>tarotologie</strong> și <strong>cartomanție</strong>. 
+            În timp, au apărut pachete special concepute pentru interpretare spirituală și ocultism, 
+            transformând Tarotul într-o unealtă de introspecție și căutare interioară.
+        </p>
+
+        <p class="intro">
+            Mulți consideră că rădăcinile simbolice ale Tarotului se întorc până în Egiptul Antic, 
+            când, se spune, înțelepții vremii ar fi codificat în imagini secretele lumii și legile universale. 
+            Astfel, fiecare carte de Tarot este o poartă către înțelegerea de sine și a tainelor existenței.
+        </p>
+       
+
+  <h2>Originea Tarotului</h2>
+
+  <div class="etteilla-container">
+  <div class="etteilla-text">
+    
+    <p>
+    Deși astăzi Tarotul este asociat în primul rând cu <strong>divinația</strong> și cu căutarea sensului interior, 
+    originile sale sunt profund <strong>istorice</strong> și surprinzător de lumești. 
+    Primele pachete de tarot au apărut în <strong>Italia secolului al XV-lea</strong>, 
+    fiind create pentru curțile nobiliare din Milano, Ferrara și Bologna. 
+    Acestea erau folosite ca <em>jocuri de societate</em>, numite „<em>trionfi</em>”, 
+    fără nicio legătură inițială cu magia sau ocultismul.
+  </p>
+
+  <p>
+    În timp, fiecare carte a început să fie privită ca o <strong>simbolizare alegorică</strong> a 
+    lumii, a virtuților și a destinului uman. Imaginile erau inspirate din arta Renașterii, 
+    combinând teme creștine, filosofice și mitologice — de la îngeri și sfinți, până la moarte, soartă și stele.
+  </p>
+
+    <p>
+      Spre sfârșitul secolului al XVIII-lea, <strong>ocultiștii francezi</strong> precum Antoine Court de Gébelin 
+      și <strong>Etteilla</strong> au reinterpretat tarotul, afirmând că își are originea în <strong>Egiptul Antic</strong>. 
+      Potrivit acestor teorii, simbolurile ar reprezenta o <em>carte a înțelepciunii ascunse</em>, 
+      creată de preoții egipteni pentru a transmite secretele lumii prin imagini.
+    </p>
+
+    <p>
+    Etteilla susținea că originea cărților de tarot provine din <strong>Cartea lui Thoth</strong> — 
+    un ansamblu de texte egiptene antice atribuite zeului <em>Thoth</em>, 
+    zeul scrisului și al cunoașterii. Se spunea că aceste texte conțineau secretele universului, 
+    ascunse sub forma simbolurilor și a limbajului mistic.
+  </p>
+
+  </div>
+
+  <div class="etteilla-side">
+    <img src="../Imagini/portrait-jean-baptiste-alliette.jpg" alt="Etteilla (Jean-Baptiste Alliette)" class="etteilla-img">
+    <p class="etteilla-caption">
+      <strong>Etteilla</strong> — pseudonimul lui <em>Jean-Baptiste Alliette</em> (1738–1791), 
+      primul om cunoscut care a folosit <strong>tarotul în scopuri oculte</strong>. 
+      Numele său este scris invers („Alliette” → „Etteilla”), o alegere intenționată pentru a adăuga un aer de mister.
+    </p>
+  </div>
+</div>
+
+<p>
+    Etteilla susținea că originea cărților de tarot provine din <strong>Cartea lui Thoth</strong> — 
+    un ansamblu de texte egiptene antice atribuite zeului <em>Thoth</em>, 
+    zeul scrisului și al cunoașterii. Se spunea că aceste texte conțineau secretele universului, 
+    ascunse sub forma simbolurilor și a limbajului mistic.
+  </p>
+  
+  <p>
+    În interpretarea sa, fiecare carte de tarot devenea o <em>cheie magică</em> 
+    spre adevărurile ascunse ale lumii, iar pachetele sale erau decorate cu motive și scene inspirate din Egiptul Antic. 
+    Tot în această perioadă, <strong>Jean Baptiste Pitois</strong> (cunoscut sub numele de <em>Paul Christian</em>) 
+    a introdus termenii de <strong>arcana majoră</strong> și <strong>arcana minoră</strong>, 
+    concepte care nu fuseseră niciodată folosite în jocurile originale de tarot, 
+    dar care aveau să devină esențiale în simbolismul ocult modern.
+  </p>
+
+  <p>
+    Astfel, Tarotul a evoluat dintr-un simplu joc de curte într-o <strong>carte a misterelor</strong>, 
+    un pod între istorie, mit și spiritualitate. Originea sa rămâne o poveste la granița 
+    dintre real și legendar — o poveste care încă fascinează și inspiră.
+  </p>
+
+
+    <!-- Structura pachetului -->
+    <div class="intro">
+      <h2>Structura pachetului de Tarot</h2>
+      <p>Un pachet de Tarot conține <strong>78 de cărți</strong>, împărțite în două grupe esențiale: Arcanele Majore și Arcanele Minore.</p>
+
+      <ul>
+        <li><strong>Arcanele Majore (22 de cărți)</strong> — lecții mari ale vieții: arhetipuri, transformări și etape decisive (ex: Nebunul, Moartea, Soarele).</li>
+        <li><strong>Arcanele Minore (56 de cărți)</strong> — experiențe cotidiene, emoții și acțiuni, împărțite în patru suite: Cupe, Bâte, Monede și Spade.</li>
+      </ul>
+    </div>
+
+    <div>
+      <p><b>Ce înseamnă Arcanele Majore</b> - Arcanele Majore simbolizează forțele profunde care modelează drumul nostru: lecții karmice, schimbări ireversibile, trepte de creștere spirituală și momente-cheie ale destinului. Ele nu sunt neapărat mai "puternice" — ci mai arhetipale.</p>
+    </div>
+
+    <div>
+      <p><b>Ce înseamnă Arcanele Minore</b> - Arcanele Minore descriu scena vieții zilnice: relații, muncă, conflicte, inspirație și resurse. Sunt practică, detaliu și direcție — modul în care lecțiile majore se manifestă concret.</p>
+    </div>
+
+    <h2>Suitele Arcanelor Minore</h2>
+
+    <div class="suite-grid">
+      <article class="suite-card">
+        <h3>Cupe (Apă)</h3>
+        <p>Emoții, intuiţie, relaţii şi sensibilitate. Arată legături afective, vindecare emoțională, creativitate sufletească și fluxul interior.</p>
+      </article>
+
+      <article class="suite-card">
+        <h3>Bâte (Foc)</h3>
+        <p>Energie, pasiune și voință. Leagă inițiativa, proiectele noi, curajul și impulsul creativ. Indică acțiune și mișcare înainte.</p>
+      </article>
+
+      <article class="suite-card">
+        <h3>Monede (Pământ)</h3>
+        <p>Lumea materială: bani, carieră, sănătate și stabilitate. Vorbesc despre manifestare, muncă practică și resurse concrete.</p>
+      </article>
+
+      <article class="suite-card">
+        <h3>Spade (Aer)</h3>
+        <p>Gândire, comunicare, decizii și conflicte. Reflectă claritatea mentală, justiția, problemele ce cer analiză și separare.</p>
+      </article>
+    </div>
+
+    </div> <!-- END PATRAT -->
+
+    <div class="social-box">
+        <a href="https://facebook.com" target="_blank">
+            <img src="../Imagini/Facebook_f_logo_(2019).png" alt="Facebook">
+        </a>
+        <a href="https://instagram.com" target="_blank">
+            <img src="../Imagini/Instagram_logo_2022.png" alt="Instagram">
+        </a>
+        <a href="https://twitter.com" target="_blank">
+            <img src="../Imagini/twitter_x.png" alt="Twitter/X">
+        </a>
+    </div>
+    <script src="DespreTarot_JS.js"></script>
+
+</body>
+
+</html>

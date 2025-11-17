@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Our Cards - Viziunea Noastră</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="OurCards.css">
+    <link rel="icon" type="image/x-icon" href="../Imagini/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <script>
+        // Se execută imediat la încărcare
+        (function () {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "light") {
+                document.documentElement.classList.add("light-mode");
+            } else if (savedTheme === "dark") {
+                document.documentElement.classList.remove("light-mode");
+            } else {
+                // Dacă nu e salvat nimic, folosim preferința sistemului
+                const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+                if (prefersLight) {
+                    document.documentElement.classList.add('light-mode');
+                }
+            }
+        })();
+    </script>
+
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="../01.Main Page/Main.html">Acasă</a></li>
+            <li><a href="../02.Despre Tarot/DespreTarot.html">Despre Tarot</a></li>
+            <li class="dropdown">
+                <a href="../03.Carti si Semnificatii/carti.html">Cărți și Semnificații</a>
+                <span class="dropdown-toggle">▾</span>
+                <ul class="dropdown-content">
+                    <li><a href="../03.Carti si Semnificatii/carti.html#arcane-majore">Arcane Majore</a></li>
+                    <li class="dropdown-sub">
+                        <a href="../03.Carti si Semnificatii/carti.html#arcane-minore">Arcane Minore</a>
+                        <span class="sub-toggle">▾</span>
+                        <ul class="dropdown-subcontent">
+                            <li><a href="../03.Carti si Semnificatii/carti.html#cupe">Cupe</a></li>
+                            <li><a href="../03.Carti si Semnificatii/carti.html#bate">Bâte</a></li>
+                            <li><a href="../03.Carti si Semnificatii/carti.html#monede">Monede</a></li>
+                            <li><a href="../03.Carti si Semnificatii/carti.html#spada">Spade</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="../04.Spreads/Spreads.html">Spreads</a></li>
+            <li><a href="../05.OurCards/OurCards.html" class="active">Our Cards</a></li>
+        </ul>
+
+        <button id="themeToggle">🌙</button>
+        <button id="hamburger">&#9776;</button>
+
+    </nav>
+
+    <div class="patrat">
+        <section class="card-vision">
+            <h1>✨ Viziunea Noastră: Un Set de Tarot Inspirat</h1>
+            <p>
+                Aici, la "Arcana Digitală", avem o dorință arzătoare: să creăm propriul nostru set de cărți de Tarot!
+                <br><br>
+                Ne imaginăm un pachet unic, unde fiecare Arcana Majoră și Minoră este ilustrată prin personaje, scene și
+                simboluri iconice din <strong>filme, seriale și jocuri video</strong> care ne-au marcat. De la
+                misticismul fantasy până la înțelepciunea science-fiction, vrem să oferim o nouă perspectivă asupra
+                arhetipurilor clasice.
+                <br><br>
+                <strong>Dar avem nevoie de ajutorul tău!</strong> Tarotul este despre experiență universală, iar
+                comunitatea noastră este plină de idei geniale.
+                Folosește formularul de mai jos pentru a ne propune asocieri inedite între o carte de Tarot și un
+                personaj, un moment sau un concept dintr-o operă de ficțiune.
+            </p>
+        </section>
+
+        <section class="idea-form-container">
+            <h2>🔮 Propune o Carte!</h2>
+            <form id="cardIdeaForm">
+                <div class="form-group">
+                    <label for="nume">Nume:</label>
+                    <input type="text" id="nume" name="nume" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefon">Număr de Telefon:</label>
+                    <input type="tel" id="telefon" name="telefon" placeholder="Opțional">
+                </div>
+
+                <div class="form-group">
+                    <label for="carte">Alege Cartea de Tarot:</label>
+                    <select id="carte" name="carte" required>
+                        <option value="">-- Selectează Cartea --</option>
+                        <optgroup label="Arcane Majore (22)">
+                            <option value="0. Nebunul">0. Nebunul</option>
+                            <option value="1. Magicianul">1. Magicianul</option>
+                            <option value="2. Marea Preoteasa">2. Marea Preoteasă</option>
+                            <option value="3. Imparateasa">3. Împărăteasa</option>
+                            <option value="4. Imparatul">4. Împăratul</option>
+                            <option value="5. Hierofantul">5. Hierofantul</option>
+                            <option value="6. Indragostitii">6. Îndrăgostiții</option>
+                            <option value="7. Carul">7. Carul</option>
+                            <option value="8. Puterea">8. Puterea</option>
+                            <option value="9. Eremitul">9. Eremitul</option>
+                            <option value="10. Roata Destinului">10. Roata Destinului</option>
+                            <option value="11. Justitia">11. Justiția</option>
+                            <option value="12. Spanzuratul">12. Spânzuratul</option>
+                            <option value="13. Moartea">13. Moartea</option>
+                            <option value="14. Temperanta">14. Temperanța</option>
+                            <option value="15. Diavolul">15. Diavolul</option>
+                            <option value="16. Turnul">16. Turnul</option>
+                            <option value="17. Steaua">17. Steaua</option>
+                            <option value="18. Luna">18. Luna</option>
+                            <option value="19. Soarele">19. Soarele</option>
+                            <option value="20. Judecata">20. Judecata</option>
+                            <option value="21. Lumea">21. Lumea</option>
+                        </optgroup>
+
+                        <optgroup label="Arcane Minore - Cupe (14)">
+                            <option value="As de Cupe">As de Cupe</option>
+                            <option value="2 de Cupe">2 de Cupe</option>
+                            <option value="3 de Cupe">3 de Cupe</option>
+                            <option value="4 de Cupe">4 de Cupe</option>
+                            <option value="5 de Cupe">5 de Cupe</option>
+                            <option value="6 de Cupe">6 de Cupe</option>
+                            <option value="7 de Cupe">7 de Cupe</option>
+                            <option value="8 de Cupe">8 de Cupe</option>
+                            <option value="9 de Cupe">9 de Cupe</option>
+                            <option value="10 de Cupe">10 de Cupe</option>
+                            <option value="Pagina de Cupe">Pagina de Cupe</option>
+                            <option value="Cavaler de Cupe">Cavaler de Cupe</option>
+                            <option value="Regina de Cupe">Regina de Cupe</option>
+                            <option value="Rege de Cupe">Rege de Cupe</option>
+                        </optgroup>
+
+                        <optgroup label="Arcane Minore - Bâte (14)">
+                            <option value="As de Bâte">As de Bâte</option>
+                            <option value="2 de Bâte">2 de Bâte</option>
+                            <option value="3 de Bâte">3 de Bâte</option>
+                            <option value="4 de Bâte">4 de Bâte</option>
+                            <option value="5 de Bâte">5 de Bâte</option>
+                            <option value="6 de Bâte">6 de Bâte</option>
+                            <option value="7 de Bâte">7 de Bâte</option>
+                            <option value="8 de Bâte">8 de Bâte</option>
+                            <option value="9 de Bâte">9 de Bâte</option>
+                            <option value="10 de Bâte">10 de Bâte</option>
+                            <option value="Pagina de Bâte">Pagina de Bâte</option>
+                            <option value="Cavaler de Bâte">Cavaler de Bâte</option>
+                            <option value="Regina de Bâte">Regina de Bâte</option>
+                            <option value="Rege de Bâte">Rege de Bâte</option>
+                        </optgroup>
+
+                        <optgroup label="Arcane Minore - Monede (14)">
+                            <option value="As de Monede">As de Monede</option>
+                            <option value="2 de Monede">2 de Monede</option>
+                            <option value="3 de Monede">3 de Monede</option>
+                            <option value="4 de Monede">4 de Monede</option>
+                            <option value="5 de Monede">5 de Monede</option>
+                            <option value="6 de Monede">6 de Monede</option>
+                            <option value="7 de Monede">7 de Monede</option>
+                            <option value="8 de Monede">8 de Monede</option>
+                            <option value="9 de Monede">9 de Monede</option>
+                            <option value="10 de Monede">10 de Monede</option>
+                            <option value="Pagina de Monede">Pagina de Monede</option>
+                            <option value="Cavaler de Monede">Cavaler de Monede</option>
+                            <option value="Regina de Monede">Regina de Monede</option>
+                            <option value="Rege de Monede">Rege de Monede</option>
+                        </optgroup>
+
+                        <optgroup label="Arcane Minore - Spade (14)">
+                            <option value="As de Spade">As de Spade</option>
+                            <option value="2 de Spade">2 de Spade</option>
+                            <option value="3 de Spade">3 de Spade</option>
+                            <option value="4 de Spade">4 de Spade</option>
+                            <option value="5 de Spade">5 de Spade</option>
+                            <option value="6 de Spade">6 de Spade</option>
+                            <option value="7 de Spade">7 de Spade</option>
+                            <option value="8 de Spade">8 de Spade</option>
+                            <option value="9 de Spade">9 de Spade</option>
+                            <option value="10 de Spade">10 de Spade</option>
+                            <option value="Pagina de Spade">Pagina de Spade</option>
+                            <option value="Cavaler de Spade">Cavaler de Spade</option>
+                            <option value="Regina de Spade">Regina de Spade</option>
+                            <option value="Rege de Spade">Rege de Spade</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="idee">Ideea Ta (Personaj, Film/Serial/Joc, Explicație):</label>
+                    <textarea id="idee" name="idee" rows="6" required></textarea>
+                </div>
+
+                <button type="submit">Trimite Ideea</button>
+
+            </form>
+        </section>
+
+        <section class="card-gallery">
+            <h2>✨ Cărți Deja Create (Inspirație)</h2>
+            <p class="gallery-description">
+                Iată câteva exemple din viziunea noastră. Dacă ai idei similare sau mai bune, trimite-le!
+            </p>
+
+            <div class="cards-grid">
+
+                <div class="gallery-card">
+                    <img src="../Imagini/Extra cards/6_lovers.png">
+                    <div class="card-info">
+                        <h3>6. The Lovers</h3>
+                        <p><strong>Inspirație:</strong>Avatar: The Last Airbender</p>
+                        <p class="card-text">Bazat pe legenda din serial, despre cei 2 indragostit separati de razboi
+                        </p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="../Imagini/Extra cards/8_strenght.png">
+                    <div class="card-info">
+                        <h3>8. Strnght</h3>
+                        <p><strong>Inspirație:</strong> Toko Fukawa (Danganronpa)</p>
+                        <p class="card-text">Cartea puterii poate insemna la fel de mult forta dar si frica. Cand am
+                            citit pentru prima data descria acestei carti, gandul mi a mers direct la acest caracter,
+                            care este o fira firava si lasa, dar si infricosatoare si puternica in unele situatii</p>
+                    </div>
+                </div>
+
+                <div class="gallery-card">
+                    <img src="../Imagini/Extra cards/5_cup.png">
+                    <div class="card-info">
+                        <h3>5 de Cupe</h3>
+                        <p><strong>Inspirație:</strong>Blue Diamond (Steven Univers)</p>
+                        <p class="card-text">Blue Diamond, desi inca era inconjurata de cei dragi, a ales sa vada doar
+                            partea goala a paharului, lipsa lui Pink Diamond</p>
+                    </div>
+
+                </div>
+        </section>
+
+    </div>
+    <div id="successModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <h2>🎉 Succes!</h2>
+            <p>Vă mulțumim! Ideea dumneavoastră a fost trimisă cu succes și ne vom inspira din ea!</p>
+            <button id="closeModal">Închide</button>
+        </div>
+    </div>
+
+    <div class="social-box">
+        <a href="https://facebook.com" target="_blank">
+            <img src="../Imagini/Facebook_f_logo_(2019).png" alt="Facebook">
+        </a>
+        <a href="https://instagram.com" target="_blank">
+            <img src="../Imagini/Instagram_logo_2022.png" alt="Instagram">
+        </a>
+        <a href="https://twitter.com" target="_blank">
+            <img src="../Imagini/twitter_x.png" alt="Twitter/X">
+        </a>
+    </div>
+
+    <script src="OurCards.js"></script>
+
+</body>
+
+</html>

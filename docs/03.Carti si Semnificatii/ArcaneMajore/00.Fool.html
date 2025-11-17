@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cărți și Semnificații Tarot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../carti.css">
+    <link rel="icon" type="image/x-icon" href="../../Imagini/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <script>
+        // Se execută imediat la încărcare pentru a seta tema înainte de randare
+        (function () {
+            const savedTheme = localStorage.getItem("theme");
+            const root = document.documentElement;
+            if (savedTheme === "light") {
+                root.classList.add("light-mode");
+            } else if (savedTheme === "dark") {
+                root.classList.remove("light-mode");
+            } else {
+                // Dacă nu e salvat nimic, folosim preferința sistemului
+                const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+                if (prefersLight) {
+                    root.classList.add('light-mode');
+                }
+            }
+        })();
+    </script>
+
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li><a href="../../01.Main Page/Main.html">Acasă</a></li>
+            <li><a href="../../02.Despre Tarot/DespreTarot.html">Despre Tarot</a></li>
+            <li class="dropdown">
+                <a href="carti.html" class="active">Cărți și Semnificații</a>
+                <span class="dropdown-toggle">▾</span>
+                <ul class="dropdown-content">
+                    <li><a href="#">Arcane Majore</a></li>
+                    <li class="dropdown-sub">
+                        <a href="arcane-minore.html">Arcane Minore</a>
+                        <span class="sub-toggle">▾</span>
+                        <ul class="dropdown-subcontent">
+                            <li><a href="#cupe">Cupe</a></li>
+                            <li><a href="#bate">Bâte</a></li>
+                            <li><a href="#monede">Monede</a></li>
+                            <li><a href="#spada">Spade</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="../../04.Spreads/Spreads.html">Spreads</a></li>
+            <li><a href="../../05.OurCards/OurCards.html">Our Cards</a></li>
+        </ul>
+
+        <button id="themeToggle">🌙</button>
+        <button id="hamburger">&#9776;</button>
+
+    </nav>
+
+    <section class="patrat">
+
+    <main class="card-sections">
+
+        <h2 class="section-title" id="arcane-majore">Arcane Majore</h2>
+        
+            <h3 class="card-title-main">0. Nebunul (The Fool) - Arhetipul Potențialului</h3>
+            <div class="card-details-content">
+                <img src="../../Imagini/Tarot/Arcane Majore/00-TheFool.jpg" alt="Imaginea Cărții Nebunul" class="detail-card-img">
+                <div class="text-content">
+                    
+                    <h4>Descriere și Simbolism</h4>
+                    <p>Nebunul poartă numărul <strong>0</strong> și reprezintă începutul absolut, potențialul nelimitat și primul pas în călătoria Arcanelor Majore. El este înfățișat ca un tânăr plin de bucurie, nepăsător, care pornește în lume purtând o desagă mică și fiind pe punctul de a păși peste o prăpastie. Câinele de la picioarele sale latră ca un avertisment, dar Nebunul, fie din naivitate, fie din încredere, pare să ignore pericolul.</p>
+                    <p>Cartea te încurajează să îmbrățișezi necunoscutul, să ai curajul de a face un **salt de credință** (leap of faith) și să abordezi viața cu optimism și entuziasm neîngrădit.</p>
+
+                    <h4>Semnificații Cheie</h4>
+                    <ul>
+                        <li><strong>Poziția Normală (Upright):</strong> Inocență, spirit liber, optimism, noi începuturi, aventură, oportunități nelimitate, spontaneitate.</li>
+                        <li><strong>Poziția Întoarsă (Reversed):</strong> Nechibzuință, imprudență, neglijență, inexperiență, asumarea de riscuri inutile sau, dimpotrivă, o ezitare (stagnare) excesivă de a porni la drum.</li>
+                    </ul>
+                </div>
+            </div>
+        
+        <hr>
+
+        <div class="carti-grid">
+            </div>
+
+    </main>
+</section>
+
+    <script src="../carti.js"></script>
+
+    
+
+</body>
+
+</html>
