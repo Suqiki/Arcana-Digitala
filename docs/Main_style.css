@@ -8,7 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('../Imagini/background-Dark.jpg');
+    background-image: url('Imagini/background-Dark.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
