@@ -24,7 +24,7 @@ MOD LIGHT
 =========================== */
 
 .light-mode body {
-    background-image: url('../Imagini/background-Light.jpg');
+    background-image: url('Imagini/background-Light.jpg');
     color: #222;
 }
 
