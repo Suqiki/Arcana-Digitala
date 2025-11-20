@@ -292,8 +292,9 @@ function drawRandomCard() {
     
     // Construiește URL-ul către pagina de semnificații (carti.html)
     // Link-ul merge la titlul secțiunii (Arcane Majore, #cupe, #spada etc.)
-    helpLinkA.href = `03.Carti si Semnificatii/carti.html${drawnCard.anchor}`;
-    
+    //helpLinkA.href = `03.Carti si Semnificatii/carti.html${drawnCard.anchor}`;
+    helpLinkA.href = `/Arcana-Digitala/03.Carti si Semnificatii/carti.html${drawnCard.anchor}`;
+
     // 6. Afișează rezultatul
     cardInfoDiv.style.display = 'block';
 }
