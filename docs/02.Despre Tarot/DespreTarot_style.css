@@ -314,8 +314,7 @@ PĂTRATUL CENTRAL (Container principal)
 
 
 /* ===========================
-    TITLURILE DE SECȚIUNI DE CĂRȚI (h2, h3)
-    (folosit în structura HTML pentru a ține cărțile)
+    TITLURILE DE SECȚIUNI DE CĂRȚI 
 =========================== */
 .card-sections { /* Asigură alinierea conținutului non-patrat (dacă există) */
     max-width: 1200px;

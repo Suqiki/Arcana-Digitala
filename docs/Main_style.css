@@ -293,6 +293,12 @@ PĂTRATUL CENTRAL
     color: #892c8c;
 }
 
+.patrat p {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
 .light-mode .patrat {
     background-color: rgba(255, 255, 255, 0.85);
     /* bej/alb translucid */
@@ -347,7 +353,7 @@ CARUSEL HERO
 .carousel img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit:fill;
     flex-shrink: 0;
     cursor: pointer;
     transition: transform 0.3s ease, filter 0.3s ease;
@@ -473,6 +479,10 @@ POZE (CARTI, ETALARI)
 .carte img:hover,
 .spread img:hover {
     transform: scale(1.05);
+}
+
+.carti-grid p{
+    font-size: 15px;
 }
 
 
