@@ -137,7 +137,7 @@ DROPDOWN PRINCIPAL
 SUBDROPDOWN (Arcane Minore)
 =================== */
 .dropdown-sub {
-    position: relative; /* must have for absolute child */
+    position: relative; 
 }
 
 .dropdown-subcontent {
@@ -160,7 +160,7 @@ SUBDROPDOWN (Arcane Minore)
 }
 
 .dropdown-sub:hover > .dropdown-subcontent {
-    display: block; /* important: only show on hover of parent */
+    display: block; 
 }
 
 .dropdown-subcontent li a {
@@ -173,14 +173,13 @@ SUBDROPDOWN (Arcane Minore)
     color: #d4af37;
 }
 
-/* Link + săgeată în linie */
-/* LINK-UL DIN DROPDOWN ȘI SUBDROPDOWN - inline-flex pentru săgeată */
+
 .dropdown > a,
 .dropdown-sub > a {
-    display: inline-flex;       /* aliniază text + săgeată pe același rând */
-    align-items: center;        /* aliniere verticală centrată */
-    justify-content: space-between; /* text la stânga, săgeată la dreapta */
-    gap: 4px;                   /* mic spațiu între text și săgeată */
+    display: inline-flex;      
+    align-items: center;        
+    justify-content: space-between; 
+    gap: 4px;                   
 }
 
 /* SĂGEATA TOGGLE */
@@ -199,13 +198,13 @@ DROPDOWN & SUBDROPDOWN MOBILE
 @media (max-width: 600px) {
     .dropdown-content,
     .dropdown-subcontent {
-        position: static; /* nu mai e absolut */
+        position: static; 
         width: 100%;
         background: none;
         box-shadow: none;
         border-radius: 0;
         padding: 0;
-        display: none; /* ascuns implicit */
+        display: none; 
     }
 
     /* Se afișează doar dacă părintele are clasa "show" */
@@ -262,10 +261,8 @@ PĂTRATUL CENTRAL
 
 .patrat {
     margin-top: 120px;
-    /* sub navbar */
     padding: 50px 40px;
     background-color: rgba(30, 30, 30, 0.85);
-    /* închidem fundalul în dark mode */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -278,7 +275,6 @@ PĂTRATUL CENTRAL
     overflow: hidden;
     transition: background-color 0.6s ease, color 0.6s ease;
     color: #f5f5dc;
-    /* text deschis pe fundal închis */
 }
 
 .patrat h1 {
@@ -301,9 +297,7 @@ PĂTRATUL CENTRAL
 
 .light-mode .patrat {
     background-color: rgba(255, 255, 255, 0.85);
-    /* bej/alb translucid */
     color: #222;
-    /* text închis pe fundal deschis */
 }
 
 .patrat span {
@@ -334,7 +328,6 @@ CARUSEL HERO
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Banda cu imagini */
 .carousel-track {
     display: flex;
     width: 100%;
@@ -344,12 +337,10 @@ CARUSEL HERO
 
 .carousel-track a {
     min-width: 100%;
-    /* fiecare slide ocupă 100% din carousel */
     height: 100%;
     flex-shrink: 0;
 }
 
-/* Imaginile propriu-zise */
 .carousel img {
     width: 100%;
     height: 100%;
@@ -422,7 +413,6 @@ BULE DE NAVIGARE
 
 .carousel-dots button.active {
     background-color: #d4af37;
-    /* auriu */
     transform: scale(1.2);
 }
 

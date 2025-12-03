@@ -265,7 +265,6 @@ PĂTRATUL CENTRAL (PENTRU TITLU)
 
 .patrat {
     margin-top: 120px;
-    /* sub navbar */
     padding: 50px 40px;
     background-color: rgba(30, 30, 30, 0.85);
     display: flex;
@@ -281,7 +280,6 @@ PĂTRATUL CENTRAL (PENTRU TITLU)
     transition: background-color 0.6s ease, color 0.6s ease;
     color: #f5f5dc;
     margin-bottom: 40px;
-    /* Spațiu sub introducere */
 }
 
 .light-mode .patrat {
@@ -296,7 +294,6 @@ PĂTRATUL CENTRAL (PENTRU TITLU)
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
     letter-spacing: 1px;
     margin: 0;
-    /* Elimină marginile h1 din container */
 }
 
 .light-mode .patrat h1 {
@@ -310,8 +307,8 @@ PĂTRATUL CENTRAL (PENTRU TITLU)
 .search-container {
     width: 100%;
     max-width: 800px;
-    margin: 20px auto 40px auto; /* Centrare și spațiu adecvat */
-    padding: 0 10px; /* Adaugă padding lateral pentru a nu atinge marginile ecranului pe mobil */
+    margin: 20px auto 40px auto; 
+    padding: 0 10px; 
 }
 
 #cardSearch {
@@ -324,7 +321,7 @@ PĂTRATUL CENTRAL (PENTRU TITLU)
     color: #f5f5dc; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     transition: all 0.3s ease;
-    box-sizing: border-box; /* IMPORTANT: Include padding și border în lățimea totală */
+    box-sizing: border-box; 
 }
 
 #cardSearch::placeholder {
@@ -355,23 +352,19 @@ PĂTRATUL CENTRAL (PENTRU TITLU)
 @media (max-width: 600px) {
     
     .search-container {
-        /* Pe ecrane mai mici de 600px, centrul containerului rămâne, dar eliminăm padding-ul HTML-ului
-           și lăsăm padding-ul definit în .patrat să gestioneze marginile. */
-        margin: 15px 0 25px 0; /* Ajustăm marginile pentru a economisi spațiu vertical */
+        margin: 15px 0 25px 0; 
         padding: 0;
         max-width: 100%;
         width: 100%;
     }
 
     #cardSearch {
-        /* Reducem padding-ul și dimensiunea fontului pentru a se potrivi mai bine pe mobil */
         padding: 12px 15px;
         font-size: 1rem;
         border-radius: 6px;
     }
 }
 
-/* Dacă ai nevoie de o ajustare și mai mică pentru ecrane foarte mici */
 @media (max-width: 400px) {
     #cardSearch {
         padding: 10px 12px;
@@ -386,7 +379,6 @@ PĂTRATUL CENTRAL (PENTRU TITLU)
     max-width: 1200px;
     width: 90%;
     margin: 0 auto;
-    /* Padding pentru a preveni lipirea de marginea ecranului pe lățimi mici */
     padding: 0 20px;
 }
 
@@ -395,7 +387,6 @@ PĂTRATUL CENTRAL (PENTRU TITLU)
     font-family: 'Cinzel', serif;
     text-align: center;
     color: #e9cb69;
-    /* Auriu */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
     margin: 40px 0 20px 0;
 }
@@ -403,7 +394,6 @@ PĂTRATUL CENTRAL (PENTRU TITLU)
 .light-mode .section-title,
 .light-mode .section-title-sub {
     color: #892c8c;
-    /* Mov */
 }
 
 .section-title {
@@ -421,7 +411,6 @@ PĂTRATUL CENTRAL (PENTRU TITLU)
 
 .carti-grid {
     display: grid;
-    /* MODIFICARE: 3 coloane egale pe desktop (pentru a avea spațiu pentru textul lung) */
     grid-template-columns: repeat(4, 1fr); 
     gap: 20px;
     margin: 20px 0;
@@ -500,7 +489,7 @@ PĂTRATUL CENTRAL (PENTRU TITLU)
     width: 100%;
     margin: 40px auto;
     padding: 20px;
-    background-color: rgba(40, 40, 40, 0.9); /* Fundal diferit pentru a se evidenția */
+    background-color: rgba(40, 40, 40, 0.9); 
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     text-align: left;
@@ -514,7 +503,7 @@ PĂTRATUL CENTRAL (PENTRU TITLU)
 .card-title-main {
     font-family: 'Cinzel', serif;
     font-size: 2.2rem;
-    color: #e9cb69; /* Culoare accent */
+    color: #e9cb69; 
     margin-top: 0;
     margin-bottom: 20px;
     text-align: center;
@@ -539,7 +528,7 @@ PĂTRATUL CENTRAL (PENTRU TITLU)
 }
 
 .text-content h4 {
-    color: #d4af37; /* Auriu */
+    color: #d4af37; 
     font-size: 1.4rem;
     margin-bottom: 8px;
 }
@@ -574,7 +563,7 @@ PĂTRATUL CENTRAL (PENTRU TITLU)
         max-width: 150px;
     }
     .text-content {
-        text-align: left; /* Păstrează textul citibil pe mobil */
+        text-align: left; 
     }
     .card-title-main {
         font-size: 1.8rem;
@@ -586,7 +575,7 @@ PĂTRATUL CENTRAL (PENTRU TITLU)
 
 .scroll-btn {
     position: fixed;
-    right: 20px;          /* distanță de marginea dreaptă */
+    right: 20px;         
     padding: 10px 15px;
     font-size: 16px;
     background-color: #333;
@@ -608,7 +597,7 @@ PĂTRATUL CENTRAL (PENTRU TITLU)
 }
 
 #scrollTop {
-    bottom: 70px; /* deasupra butonului jos */
+    bottom: 70px; 
 }
 
 #scrollBottom {
@@ -621,7 +610,6 @@ PĂTRATUL CENTRAL (PENTRU TITLU)
     RESPONSIVITATE GENERICĂ
 =========================== */
 
-/* Desktop mic / Tabletă orizontală: 3 Coloane (Rămâne neschimbat, dar cu gap ajustat) */
 @media (max-width: 900px) {
     .patrat {
         padding: 30px 20px;
@@ -638,7 +626,6 @@ PĂTRATUL CENTRAL (PENTRU TITLU)
     }
 }
 
-/* Mobil / Tabletă verticală: 2 Coloane (Se aplică de la 600px) */
 @media (max-width: 600px) {
     .patrat {
         padding: 20px 15px;
@@ -649,23 +636,19 @@ PĂTRATUL CENTRAL (PENTRU TITLU)
     }
     
     .carti-grid {
-        /* MODIFICARE: Trecere la 2 coloane pentru a avea spațiu pe telefoane */
         grid-template-columns: repeat(2, 1fr); 
         gap: 10px;
         
-        /* Resetăm regulile de lățime/padding pentru mobil */
         width: 100%;
         margin: 20px 0; 
         padding: 0;
     }
 }
 
-/* Mobil foarte mic: 2 Coloane (Ajustare) */
 @media (max-width: 480px) {
     .carti-grid {
-        /* Păstrat la 2 coloane, dar cu spațiu minim */
         grid-template-columns: repeat(2, 1fr);
-        gap: 8px; /* Spațiu minim între cărți */
+        gap: 8px; 
     }
 
     .patrat {
@@ -748,9 +731,9 @@ PĂTRATUL CENTRAL (PENTRU TITLU)
     transition: background-color 0.4s ease, color 0.4s ease, background-image 0.8s ease;
 }
 
-/*//////////////////////////////
-Social
-//////////////////////////////*/
+/*===========================
+            Social
+===========================*/
 
 .social-box {
     width: 280px;
@@ -758,7 +741,7 @@ Social
     background: rgba(30, 30, 30, 0.34);
     border-radius: 15px;
     padding: 20px;
-    margin: 40px auto;  /* centrează pătratul */
+    margin: 40px auto;  
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
