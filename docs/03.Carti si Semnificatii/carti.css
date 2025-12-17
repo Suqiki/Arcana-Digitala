@@ -33,7 +33,7 @@ BARA DE NAVIGARE
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(25, 25, 25, 0.85);
+    background-color: rgba(25, 25, 25, 0.95);
     backdrop-filter: blur(4px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     display: flex;
@@ -44,7 +44,7 @@ BARA DE NAVIGARE
 }
 
 .light-mode .navbar {
-    background-color: rgba(250, 250, 250, 0.85);
+    background-color: rgba(250, 250, 250, 0.95);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -105,7 +105,7 @@ DROPDOWN PRINCIPAL
     min-width: 200px;
     padding: 8px 0;
     border-radius: 12px;
-    background: rgba(30, 30, 30, 0.85);
+    background: rgba(30, 30, 30);
     backdrop-filter: blur(6px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     z-index: 2000;
@@ -113,7 +113,7 @@ DROPDOWN PRINCIPAL
 }
 
 .light-mode .dropdown-content {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255);
 }
 
 .dropdown:hover>.dropdown-content {
@@ -148,7 +148,7 @@ SUBDROPDOWN (Arcane Minore)
     min-width: 180px;
     padding: 8px 0;
     border-radius: 12px;
-    background: rgba(40, 40, 40, 0.9);
+    background: rgba(40, 40, 40);
     backdrop-filter: blur(6px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
     z-index: 2002;
@@ -156,7 +156,7 @@ SUBDROPDOWN (Arcane Minore)
 }
 
 .light-mode .dropdown-subcontent {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255);
 }
 
 .dropdown-sub:hover>.dropdown-subcontent {
@@ -178,13 +178,9 @@ SUBDROPDOWN (Arcane Minore)
 .dropdown>a,
 .dropdown-sub>a {
     display: inline-flex;
-    /* aliniază text + săgeată pe același rând */
     align-items: center;
-    /* aliniere verticală centrată */
     justify-content: space-between;
-    /* text la stânga, săgeată la dreapta */
     gap: 4px;
-    /* mic spațiu între text și săgeată */
 }
 
 /* SĂGEATA TOGGLE */

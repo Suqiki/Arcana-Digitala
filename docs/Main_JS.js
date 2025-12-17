@@ -232,24 +232,83 @@ function updateUI(card, isReversed, isDaily) {
 // ===========================
 // Inițializare și Carusel
 // ===========================
-window.addEventListener('load', () => {
-    // Încărcăm automat Cartea Zilei la pornire
-    displayDailyCard();
-    
-    if (drawCardButton) {
-        drawCardButton.addEventListener('click', drawRandomCard);
-    }
-});
-
-// Codul pentru carusel rămâne identic cu cel anterior...
 const track = document.querySelector('.carousel-track');
-if (track) {
-    let slides = Array.from(track.children);
-    const prevBtn = document.querySelector('.carousel-btn.prev');
-    const nextBtn = document.querySelector('.carousel-btn.next');
-    const dotsContainer = document.querySelector('.carousel-dots');
-    
-    if (slides.length > 0) {
-        // ... (restul logicii tale de carusel aici) ...
-    }
+let slides = Array.from(track.children); // toate slide-urile inițiale
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const nextBtn = document.querySelector('.carousel-btn.next');
+const dotsContainer = document.querySelector('.carousel-dots');
+
+if (track && slides.length > 0) {
+    let index = 1; // start pe primul slide real
+    let autoSlide;
+
+    // Clone primul și ultimul slide
+    const firstClone = slides[0].cloneNode(true);
+    const lastClone = slides[slides.length - 1].cloneNode(true);
+
+    firstClone.id = 'first-clone';
+    lastClone.id = 'last-clone';
+
+    track.appendChild(firstClone);
+    track.insertBefore(lastClone, slides[0]);
+
+    // Recalculăm slides după clone
+    slides = Array.from(track.children);
+
+    // Setăm track la primul slide real
+    track.style.transform = `translateX(-${index * 100}%)`;
+
+    // Creăm bulele
+    slides.slice(1, slides.length-1).forEach((_, i) => {
+        const dot = document.createElement('button');
+        if (i === 0) dot.classList.add('active');
+        dotsContainer.appendChild(dot);
+    });
+    const dots = dotsContainer.querySelectorAll('button');
+
+    const moveToSlide = (i) => {
+        index = i;
+        track.style.transition = 'transform 0.8s ease';
+        track.style.transform = `translateX(-${index * 100}%)`;
+
+        // Actualizare bule
+        let activeIndex = index - 1;
+        if(activeIndex < 0) activeIndex = slides.length - 3;
+        if(activeIndex > slides.length - 3) activeIndex = 0;
+        dots.forEach(d => d.classList.remove('active'));
+        dots[activeIndex].classList.add('active');
+    };
+
+    // Detectăm când tranziția s-a terminat pe clone
+    track.addEventListener('transitionend', () => {
+        if (slides[index].id === 'first-clone') {
+            track.style.transition = 'none';
+            index = 1;
+            track.style.transform = `translateX(-${index * 100}%)`;
+        }
+        if (slides[index].id === 'last-clone') {
+            track.style.transition = 'none';
+            index = slides.length - 2;
+            track.style.transform = `translateX(-${index * 100}%)`;
+        }
+    });
+
+    const startAuto = () => {
+        autoSlide = setInterval(() => moveToSlide(index + 1), 4000);
+    };
+    const stopAuto = () => clearInterval(autoSlide);
+
+    // Butoane
+    prevBtn.addEventListener('click', () => { moveToSlide(index - 1); stopAuto(); startAuto(); });
+    nextBtn.addEventListener('click', () => { moveToSlide(index + 1); stopAuto(); startAuto(); });
+
+    // Bule click
+    dots.forEach((dot, i) => { dot.addEventListener('click', () => { moveToSlide(i + 1); stopAuto(); startAuto(); }); });
+
+    // Pauză hover
+    track.addEventListener('mouseenter', stopAuto);
+    track.addEventListener('mouseleave', startAuto);
+
+    // Start automat
+    startAuto();
 }
