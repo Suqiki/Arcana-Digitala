@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="ro">
 
 <head>
-    <title>Tarot Page</title>
+    <title>Arcana Digitală - Acasă</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Main_style.css">
     <link rel="icon" type="image/x-icon" href="Imagini/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WGZMT7NJR9"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -18,7 +17,7 @@
     </script>
 
     <script>
-        // Se execută imediat la încărcare
+        // Setarea temei la încărcare
         (function () {
             const savedTheme = localStorage.getItem("theme");
             if (savedTheme === "light") {
@@ -26,7 +25,6 @@
             } else if (savedTheme === "dark") {
                 document.documentElement.classList.remove("light-mode");
             } else {
-                // Dacă nu e salvat nimic, folosim preferința sistemului
                 const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
                 if (prefersLight) {
                     document.documentElement.classList.add('light-mode');
@@ -34,13 +32,10 @@
             }
         })();
     </script>
-
-
 </head>
 
 <body>
 
-    <!-- Bara de navigare -->
     <nav class="navbar">
         <ul class="nav-list">
             <li><a href="index.html" class="active">Acasă</a></li>
@@ -62,137 +57,93 @@
                     </li>
                 </ul>
             </li>
-
-
-
             <li><a href="04.Spreads/Spreads.html">Spreads</a></li>
             <li><a href="05.OurCards/OurCards.html">Our Cards</a></li>
         </ul>
 
-        <!-- Buton Dark/Light -->
         <button id="themeToggle">🌙</button>
         <button id="hamburger">&#9776;</button>
-
     </nav>
 
-    <!-- Pătratul central -->
     <div class="patrat">
         <h1>Welcome to the Magical World of Tarot</h1>
 
-        <!--Carusel-->
         <section class="hero-carousel">
             <div class="carousel">
                 <div class="carousel-track">
-                    <a href="02.Despre Tarot/DespreTarot.html"><img src="Imagini/carusel1.jpg"></a>
-                    <a href="03.Carti si Semnificatii/carti.html"><img src="Imagini/carusel2.jpg"></a>
-                    <a href="04.Spreads/Spreads.html"><img src="Imagini/carusel3.jpg"></a>
-                    <a href="05.OurCards/OurCards.html"><img src="Imagini/carusel4.jpg"></a>
+                    <a href="02.Despre Tarot/DespreTarot.html"><img src="Imagini/carusel1.jpg" alt="Istorie"></a>
+                    <a href="03.Carti si Semnificatii/carti.html"><img src="Imagini/carusel2.jpg" alt="Semnificații"></a>
+                    <a href="04.Spreads/Spreads.html"><img src="Imagini/carusel3.jpg" alt="Etalări"></a>
+                    <a href="05.OurCards/OurCards.html"><img src="Imagini/carusel4.jpg" alt="Viziune"></a>
                 </div>
-                <!-- Săgeți de navigare -->
                 <button class="carousel-btn prev">&#10094;</button>
                 <button class="carousel-btn next">&#10095;</button>
-
-                <!-- Bule de navigare -->
                 <div class="carousel-dots"></div>
             </div>
         </section>
 
-        <!-- Despre Tarot -->
         <section class="despre">
-            <h2>Despre Tarot</h2>
-            <p>Tarotul: O călătorie fascinantă de la jocul nobil de curte la instrumentul suprem de introspecție și divinație.</p>
-            <p>Pătrunde în istoria celor 78 de cărți și înțelege cum Arcanele Majore (marile lecții ale vieții) și Arcanele Minore (experiențele cotidiene) formează o hartă arhetipală a destinului tău. E timpul să descifrezi simbolurile și să găsești răspunsurile ascunse în tine.</p>
-            <p>Ești pregătit să înțelegi esența cunoașterii ascunse? Află mai multe despre structură și semnificații!</p>
-            <p>Apasa <a href="02.Despre Tarot/DespreTarot.html">aici </a> pentru a afla mai multe despre aceasta istorie mistica</p>
-        </section>
-
-        <!-- Preview Cărți -->
-        <section class="preview-carti">
-            <h2>Arcane Majore și Minore</h2>
-            <p>O sa invatam semnificatia arcanelor minore si celor 4 tipuri de arcane minore</p>
-            <div class="carti-grid">
-                <div class="carte">
-                    <img src="Imagini/Tarot/Arcane Majore/00-TheFool.jpg" alt="The Fool">
-                    <p>The Fool – Începuturi noi și aventură</p>
-                </div>
-                <div class="carte">
-                    <img src="Imagini/Tarot/Arcane Majore/01-TheMagician.jpg" alt="The Magician">
-                    <p>The Magician – Creativitate și putere personală</p>
-                </div>
-                <div class="carte">
-                    <img src="Imagini/Tarot/Arcane Minore/Cup/Cups01.jpg" alt="As de Cupe">
-                    <p>Cupe – Emoții și relații</p>
-                </div>
-                <div class="carte">
-                    <img src="Imagini/Tarot/Arcane Minore/Wand/Wands01.jpg" alt="As de Bâte">
-                    <p>Bâte – Acțiune și pasiune</p>
-                </div>
-                <div class="carte">
-                    <img src="Imagini/Tarot/Arcane Minore/Pentacle/Pentacles01.jpg" alt="As de Monede">
-                    <p>Monede – Stabilitate și prosperitate</p>
-                </div>
-                <div class="carte">
-                    <img src="Imagini/Tarot/Arcane Minore/Sword/Swords01.jpg" alt="As de Săbi">
-                    <p>Săbi – Rațiune și conflict</p>
-                </div>
+            <h2>Ce este Tarotul?</h2>
+            <p>Tarotul este o hartă arhetipală a experienței umane, un instrument de introspecție ce îmbină simbolismul cu intuiția.</p>
+            
+            <div id="moreIntro" style="display: none;">
+                <p>Fiecare dintre cele 78 de cărți oglindește o etapă a vieții sau o energie specifică. Descoperă cum poți folosi aceste simboluri pentru a câștiga claritate în prezent.</p>
+                <p>Apasă <a href="02.Despre Tarot/DespreTarot.html">aici</a> pentru a explora întreaga istorie.</p>
             </div>
+            <button onclick="toggleIntro()" id="introBtn" class="read-more-btn">Află mai multe</button>
         </section>
 
-        <!-- Spreads populare -->
-        <section class="spreads">
-            <h2>Etalari populare</h2>
-            <p>Cele mai cunoscute etalari</p>
-            <div class="spreads-grid">
-                <div class="spread">
-                    <img src="Imagini/Etalari/etalari_3.png" alt="Three Card Spread">
-                    <p>Three Card Spread – Trecut, Prezent, Viitor</p>
-                </div>
-                <div class="spread">
-                    <img src="Imagini/Etalari/etalari_10.png" alt="Celtic Cross">
-                    <p>Celtic Cross – Analiză completă a situației</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Get Your Cards -->
-        <section class="get-cards">
-            <h2>Draw your answer</h2>
-            <p>Ai o intrebare la care vrei sa afli raspunsul?</p>
+        <section class="get-cards spotlight">
+            <h2>✨ Card of the Day</h2>
+            <p>Descoperă energia care te ghidează astăzi. Concentrează-te pe o întrebare:</p>
             <button id="drawCard">Trage o carte</button>
 
             <div id="cardResult">
                 <div id="drawnCardContainer">
-                    <img id="drawnCardImage" src="" alt="Cartea extrasă" style="display:none;">
+                    <img id="drawnCardImage" src="" alt="Cartea zilei" style="display:none;">
                     <div id="cardInfo" style="display:none;">
                         <h3 id="cardTitle"></h3>
                         <p id="cardOrientation"></p>
-
-                        <a id="helpLink" href="#" target="_blank" class="help-btn"
-                            title="Află mai multe despre această carte">
-                            <span class="help-icon">❓</span>
-                        </a>
+                        <a id="helpLink" href="#" target="_blank" class="details-link">Citește semnificația completă</a>
                     </div>
                 </div>
             </div>
         </section>
 
-    </div> <!-- END PATRAT -->
+        <section class="quick-nav">
+            <div class="nav-card">
+                <h3>📖 Semnificații</h3>
+                <a href="03.Carti si Semnificatii/carti.html">Explorează Arcanele →</a>
+            </div>
+            <div class="nav-card">
+                <h3>🃏 Etalări</h3>
+                <a href="04.Spreads/Spreads.html">Învață layout-uri →</a>
+            </div>
+        </section>
 
-    <footer>
+    </div> <footer>
         <div class="social-box">
-            <a href="https://facebook.com" target="_blank">
-                <img src="Imagini/Facebook_f_logo_(2019).png" alt="Facebook">
-            </a>
-            <a href="https://instagram.com" target="_blank">
-                <img src="Imagini/Instagram_logo_2022.png" alt="Instagram">
-            </a>
-            <a href="https://twitter.com" target="_blank">
-                <img src="Imagini/twitter_x.png" alt="Twitter/X">
-            </a>
+            <a href="https://facebook.com" target="_blank"><img src="Imagini/Facebook_f_logo_(2019).png" alt="Facebook"></a>
+            <a href="https://instagram.com" target="_blank"><img src="Imagini/Instagram_logo_2022.png" alt="Instagram"></a>
+            <a href="https://twitter.com" target="_blank"><img src="Imagini/twitter_x.png" alt="Twitter"></a>
         </div>
     </footer>
+
     <script src="Main_JS.js"></script>
+    <script>
+        // Logica pentru Progressive Disclosure
+        function toggleIntro() {
+            const extra = document.getElementById("moreIntro");
+            const btn = document.getElementById("introBtn");
+            if (extra.style.display === "none") {
+                extra.style.display = "block";
+                btn.textContent = "Afișează mai puțin";
+            } else {
+                extra.style.display = "none";
+                btn.textContent = "Află mai multe";
+            }
+        }
+    </script>
 
 </body>
-
 </html>

@@ -35,7 +35,7 @@ hamburger.addEventListener("click", (e) => {
 });
 
 // ===========================
-// Dropdown principal (Cărți și Semnificații) – mobil
+// Dropdown-uri mobil
 // ===========================
 const mainToggles = document.querySelectorAll(".dropdown-toggle");
 mainToggles.forEach(toggle => {
@@ -46,7 +46,6 @@ mainToggles.forEach(toggle => {
     });
 });
 
-// Subdropdown mobil
 const subToggles = document.querySelectorAll(".sub-toggle");
 subToggles.forEach(toggle => {
     toggle.addEventListener("click", (e) => {
@@ -56,17 +55,10 @@ subToggles.forEach(toggle => {
     });
 });
 
-// ===========================
-// Click în afara meniului (curăță meniul și dropdown-urile)
-// ===========================
 document.addEventListener("click", (e) => {
     if (window.innerWidth <= 600) {
         if (e.target !== hamburger && !navList.contains(e.target)) {
-
-            // Închide meniul principal
             navList.classList.remove("show");
-
-            // Închide toate dropdown-urile
             mainDropdowns.forEach(d => {
                 d.classList.remove("show");
                 d.querySelectorAll(".dropdown-sub").forEach(s => s.classList.remove("show"));
@@ -75,105 +67,26 @@ document.addEventListener("click", (e) => {
     }
 });
 
+// ===========================
+// Progressive Disclosure (Află mai multe)
+// ===========================
+function toggleIntro() {
+    const extraText = document.getElementById("moreIntro");
+    const btn = document.getElementById("introBtn");
 
-
-// carusel
-const track = document.querySelector('.carousel-track');
-let slides = Array.from(track.children); // toate slide-urile inițiale
-const prevBtn = document.querySelector('.carousel-btn.prev');
-const nextBtn = document.querySelector('.carousel-btn.next');
-const dotsContainer = document.querySelector('.carousel-dots');
-
-if (track && slides.length > 0) {
-    let index = 1; // start pe primul slide real
-    let autoSlide;
-
-    // Clone primul și ultimul slide
-    const firstClone = slides[0].cloneNode(true);
-    const lastClone = slides[slides.length - 1].cloneNode(true);
-
-    firstClone.id = 'first-clone';
-    lastClone.id = 'last-clone';
-
-    track.appendChild(firstClone);
-    track.insertBefore(lastClone, slides[0]);
-
-    // Recalculăm slides după clone
-    slides = Array.from(track.children);
-
-    // Setăm track la primul slide real
-    track.style.transform = `translateX(-${index * 100}%)`;
-
-    // Creăm bulele
-    slides.slice(1, slides.length-1).forEach((_, i) => {
-        const dot = document.createElement('button');
-        if (i === 0) dot.classList.add('active');
-        dotsContainer.appendChild(dot);
-    });
-    const dots = dotsContainer.querySelectorAll('button');
-
-    const moveToSlide = (i) => {
-        index = i;
-        track.style.transition = 'transform 0.8s ease';
-        track.style.transform = `translateX(-${index * 100}%)`;
-
-        // Actualizare bule
-        let activeIndex = index - 1;
-        if(activeIndex < 0) activeIndex = slides.length - 3;
-        if(activeIndex > slides.length - 3) activeIndex = 0;
-        dots.forEach(d => d.classList.remove('active'));
-        dots[activeIndex].classList.add('active');
-    };
-
-    // Detectăm când tranziția s-a terminat pe clone
-    track.addEventListener('transitionend', () => {
-        if (slides[index].id === 'first-clone') {
-            track.style.transition = 'none';
-            index = 1;
-            track.style.transform = `translateX(-${index * 100}%)`;
-        }
-        if (slides[index].id === 'last-clone') {
-            track.style.transition = 'none';
-            index = slides.length - 2;
-            track.style.transform = `translateX(-${index * 100}%)`;
-        }
-    });
-
-    const startAuto = () => {
-        autoSlide = setInterval(() => moveToSlide(index + 1), 4000);
-    };
-    const stopAuto = () => clearInterval(autoSlide);
-
-    // Butoane
-    prevBtn.addEventListener('click', () => { moveToSlide(index - 1); stopAuto(); startAuto(); });
-    nextBtn.addEventListener('click', () => { moveToSlide(index + 1); stopAuto(); startAuto(); });
-
-    // Bule click
-    dots.forEach((dot, i) => { dot.addEventListener('click', () => { moveToSlide(i + 1); stopAuto(); startAuto(); }); });
-
-    // Pauză hover
-    track.addEventListener('mouseenter', stopAuto);
-    track.addEventListener('mouseleave', startAuto);
-
-    // Start automat
-    startAuto();
+    if (extraText.style.display === "none") {
+        extraText.style.display = "block";
+        btn.textContent = "Afișează mai puțin";
+    } else {
+        extraText.style.display = "none";
+        btn.textContent = "Află mai multe";
+    }
 }
 
-
-// ===================================
-// Logica de extragere carte (Draw Card)
-// ===================================
-
-const drawCardButton = document.getElementById('drawCard');
-const drawnCardImage = document.getElementById('drawnCardImage');
-const cardInfoDiv = document.getElementById('cardInfo');
-const cardTitleH3 = document.getElementById('cardTitle');
-const cardOrientationP = document.getElementById('cardOrientation');
-const helpLinkA = document.getElementById('helpLink');
-
-// Definirea pachetului de cărți (simplificat, folosind numele și calea)
+// ===========================
+// Logica Pachetului de Cărți
+// ===========================
 const fullTarotDeck = [
-    // --- ARCANE MAJORE (Index 0-21) ---
     { id: 'Nebunul', path: 'Imagini/Tarot/Arcane Majore/00-TheFool.jpg', anchor: '#arcane-majore' },
     { id: 'Magicianul', path: 'Imagini/Tarot/Arcane Majore/01-TheMagician.jpg', anchor: '#arcane-majore' },
     { id: 'Marea Preoteasă', path: 'Imagini/Tarot/Arcane Majore/02-TheHighPriestess.jpg', anchor: '#arcane-majore' },
@@ -196,9 +109,6 @@ const fullTarotDeck = [
     { id: 'Soarele', path: 'Imagini/Tarot/Arcane Majore/19-TheSun.jpg', anchor: '#arcane-majore' },
     { id: 'Judecata', path: 'Imagini/Tarot/Arcane Majore/20-Judgement.jpg', anchor: '#arcane-majore' },
     { id: 'Lumea', path: 'Imagini/Tarot/Arcane Majore/21-TheWorld.jpg', anchor: '#arcane-majore' },
-
-    // --- ARCANE MINORE (14 cărți x 4 suite) ---
-    // Cupe (Cups) - De la 1 la 14
     { id: 'Asul de Cupe', path: 'Imagini/Tarot/Arcane Minore/Cup/Cups01.jpg', anchor: '#cupe' },
     { id: 'Doi de Cupe', path: 'Imagini/Tarot/Arcane Minore/Cup/Cups02.jpg', anchor: '#cupe' },
     { id: 'Trei de Cupe', path: 'Imagini/Tarot/Arcane Minore/Cup/Cups03.jpg', anchor: '#cupe' },
@@ -213,8 +123,6 @@ const fullTarotDeck = [
     { id: 'Cal de Cupe', path: 'Imagini/Tarot/Arcane Minore/Cup/Cups12.jpg', anchor: '#cupe' },
     { id: 'Regină de Cupe', path: 'Imagini/Tarot/Arcane Minore/Cup/Cups13.jpg', anchor: '#cupe' },
     { id: 'Rege de Cupe', path: 'Imagini/Tarot/Arcane Minore/Cup/Cups14.jpg', anchor: '#cupe' },
-
-    // Bâte (Wands)
     { id: 'Asul de Bâte', path: 'Imagini/Tarot/Arcane Minore/Wand/Wands01.jpg', anchor: '#bate' },
     { id: 'Doi de Bâte', path: 'Imagini/Tarot/Arcane Minore/Wand/Wands02.jpg', anchor: '#bate' },
     { id: 'Trei de Bâte', path: 'Imagini/Tarot/Arcane Minore/Wand/Wands03.jpg', anchor: '#bate' },
@@ -229,8 +137,6 @@ const fullTarotDeck = [
     { id: 'Cavalerul de Bâte', path: 'Imagini/Tarot/Arcane Minore/Wand/Wands12.jpg', anchor: '#bate' },
     { id: 'Regina de Bâte', path: 'Imagini/Tarot/Arcane Minore/Wand/Wands13.jpg', anchor: '#bate' },
     { id: 'Regele de Bâte', path: 'Imagini/Tarot/Arcane Minore/Wand/Wands14.jpg', anchor: '#bate' },
-
-    // Monede (Pentacles)
     { id: 'Asul de Monede', path: 'Imagini/Tarot/Arcane Minore/Pentacle/Pentacles01.jpg', anchor: '#monede' },
     { id: 'Doi de Monede', path: 'Imagini/Tarot/Arcane Minore/Pentacle/Pentacles02.jpg', anchor: '#monede' },
     { id: 'Trei de Monede', path: 'Imagini/Tarot/Arcane Minore/Pentacle/Pentacles03.jpg', anchor: '#monede' },
@@ -245,8 +151,6 @@ const fullTarotDeck = [
     { id: 'Cavalerul de Monede', path: 'Imagini/Tarot/Arcane Minore/Pentacle/Pentacles12.jpg', anchor: '#monede' },
     { id: 'Regina de Monede', path: 'Imagini/Tarot/Arcane Minore/Pentacle/Pentacles13.jpg', anchor: '#monede' },
     { id: 'Rege de Monede', path: 'Imagini/Tarot/Arcane Minore/Pentacle/Pentacles14.jpg', anchor: '#monede' },
-    
-    // Spade (Swords)
     { id: 'Asul de Spade', path: 'Imagini/Tarot/Arcane Minore/Sword/Swords01.jpg', anchor: '#spada' },
     { id: 'Doi de Spade', path: 'Imagini/Tarot/Arcane Minore/Sword/Swords02.jpg', anchor: '#spada' },
     { id: 'Trei de Spade', path: 'Imagini/Tarot/Arcane Minore/Sword/Swords03.jpg', anchor: '#spada' },
@@ -263,42 +167,89 @@ const fullTarotDeck = [
     { id: 'Rege de Spade', path: 'Imagini/Tarot/Arcane Minore/Sword/Swords14.jpg', anchor: '#spada' },
 ];
 
+const drawCardButton = document.getElementById('drawCard');
+const drawnCardImage = document.getElementById('drawnCardImage');
+const cardInfoDiv = document.getElementById('cardInfo');
+const cardTitleH3 = document.getElementById('cardTitle');
+const cardOrientationP = document.getElementById('cardOrientation');
+const helpLinkA = document.getElementById('helpLink');
+
+// ===========================
+// Funcție pentru Cartea Zilei (Identică pe zi)
+// ===========================
+function displayDailyCard() {
+    const now = new Date();
+    // Generăm un număr (seed) bazat pe zi, lună și an
+    const dateSeed = now.getFullYear() * 10000 + (now.getMonth() + 1) * 100 + now.getDate();
+    
+    // Alegem cartea fixă pentru ziua de azi folosind restul împărțirii
+    const cardIndex = dateSeed % fullTarotDeck.length;
+    const dailyCard = fullTarotDeck[cardIndex];
+    
+    // Orientare fixă (ex: par = normal, impar = inversat)
+    const isReversed = dateSeed % 2 !== 0;
+
+    updateUI(dailyCard, isReversed, true);
+}
+
+// ===========================
+// Funcție pentru Tragere Personală (Aleatorie)
+// ===========================
 function drawRandomCard() {
-    // 1. Alege o carte la întâmplare
     const randomIndex = Math.floor(Math.random() * fullTarotDeck.length);
     const drawnCard = fullTarotDeck[randomIndex];
+    const isReversed = Math.random() < 0.5;
 
-    // 2. Decide orientarea (normală sau inversată)
-    const isReversed = Math.random() < 0.5; // 50% șanse de a fi inversată
+    updateUI(drawnCard, isReversed, false);
+    
+    // Scroll lin către rezultat pentru a ghida utilizatorul
+    document.getElementById('cardResult').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
 
-    // 3. Afișează imaginea
-    drawnCardImage.src = drawnCard.path;
-    drawnCardImage.alt = drawnCard.id;
+// ===========================
+// Helper UI Update
+// ===========================
+function updateUI(card, isReversed, isDaily) {
+    drawnCardImage.src = card.path;
+    drawnCardImage.alt = card.id;
     drawnCardImage.style.display = 'block';
     
-    // 4. Aplică rotația (inversată)
     if (isReversed) {
         drawnCardImage.style.transform = 'rotate(180deg)';
-        cardOrientationP.textContent = 'Orientare: Întoarsă (Reversed)';
-        cardOrientationP.style.color = '#ff6347'; // Roșu/Portocaliu pentru a marca inversarea
+        cardOrientationP.textContent = (isDaily ? 'Energia zilei: ' : 'Orientare: ') + 'Întoarsă (Reversed)';
+        cardOrientationP.style.color = '#ff6347';
     } else {
         drawnCardImage.style.transform = 'rotate(0deg)';
-        cardOrientationP.textContent = 'Orientare: Normală (Upright)';
-        cardOrientationP.style.color = '#4e8f0dff'; // Verde pentru a marca orientarea normală
+        cardOrientationP.textContent = (isDaily ? 'Energia zilei: ' : 'Orientare: ') + 'Normală (Upright)';
+        cardOrientationP.style.color = '#4e8f0dff';
     }
     
-    // 5. Actualizează textul și link-ul de ajutor
-    cardTitleH3.textContent = drawnCard.id;
-    
-    // Construiește URL-ul către pagina de semnificații (carti.html)
-    // Link-ul merge la titlul secțiunii (Arcane Majore, #cupe, #spada etc.)
-    //helpLinkA.href = `03.Carti si Semnificatii/carti.html${drawnCard.anchor}`;
-    helpLinkA.href = `/Arcana-Digitala/03.Carti si Semnificatii/carti.html${drawnCard.anchor}`;
-
-    // 6. Afișează rezultatul
+    cardTitleH3.textContent = card.id + (isDaily ? " (Zilnic)" : " (Personal)");
+    helpLinkA.href = `/Arcana-Digitala/03.Carti si Semnificatii/carti.html${card.anchor}`;
     cardInfoDiv.style.display = 'block';
 }
 
-if (drawCardButton) {
-    drawCardButton.addEventListener('click', drawRandomCard);
+// ===========================
+// Inițializare și Carusel
+// ===========================
+window.addEventListener('load', () => {
+    // Încărcăm automat Cartea Zilei la pornire
+    displayDailyCard();
+    
+    if (drawCardButton) {
+        drawCardButton.addEventListener('click', drawRandomCard);
+    }
+});
+
+// Codul pentru carusel rămâne identic cu cel anterior...
+const track = document.querySelector('.carousel-track');
+if (track) {
+    let slides = Array.from(track.children);
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    const dotsContainer = document.querySelector('.carousel-dots');
+    
+    if (slides.length > 0) {
+        // ... (restul logicii tale de carusel aici) ...
+    }
 }

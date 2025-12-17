@@ -281,7 +281,6 @@ PĂTRATUL CENTRAL
     font-family: 'Cinzel', serif;
     font-size: 50px;
     color: #e9cb69;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
     letter-spacing: 1px;
 }
 
@@ -693,6 +692,161 @@ Social
     transform: scale(1.15);
 }
 
+/* ===================================
+   SPOTLIGHT: CARTEA ZILEI (Dark & Light)
+   =================================== */
+.get-cards.spotlight {
+    background: rgba(40, 40, 40, 0.7);
+    border: 10px ;
+    padding: 40px;
+    border-radius: 20px;
+    margin: 40px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+/* Corecție Spotlight pentru Light Mode */
+.light-mode .get-cards.spotlight {
+    background: rgba(240, 240, 240, 0.9); /* Gri foarte deschis, nu galben */
+    border: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.get-cards.spotlight h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem;
+    color: #e9cb69;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Umbră fină pentru stil premium */
+}
+
+.light-mode .get-cards.spotlight h2 {
+    color: #892c8c; /* Titlu mov pe fundal deschis */
+    text-shadow: none;
+}
+
+/* ===================================
+   REZULTAT CARD & LINK DETALII
+   =================================== */
+#cardTitle {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: #e9cb69;
+    margin-top: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.light-mode #cardTitle {
+    color: #4e1251; /* Mov foarte închis pentru lizibilitate */
+    text-shadow: none;
+}
+
+.details-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #e9cb69;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid #e9cb69;
+    transition: 0.3s;
+}
+
+.light-mode .details-link {
+    color: #892c8c;
+    border-bottom-color: #892c8c;
+}
+
+.details-link:hover {
+    color: #d4af37;
+    border-color: #d4af37;
+}
+
+/* ===================================
+   EXPLORARE SIMPLIFICATĂ (QUICK-NAV)
+   =================================== */
+
+.quick-nav {
+    display: flex;
+    flex-direction: row; /* Forțează așezarea în linie */
+    justify-content: center; /* Centrează cardurile */
+    align-items: stretch; /* Le face să aibă aceeași înălțime */
+    gap: 20px; /* Spațiul dintre carduri */
+    margin-top: 50px;
+    width: 100%;
+    flex-wrap: nowrap; /* Împiedică trecerea pe rândul următor pe ecrane mari */
+}
+
+.nav-card {
+    flex: 1; /* Le face să împartă spațiul egal */
+    max-width: 400px; /* Limitează lățimea maximă pentru a nu deveni prea lungi */
+    background: rgba(40, 40, 40, 0.7); /* Fundal închis conform temei Spreads */
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(233, 203, 105, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.light-mode .nav-card {
+    background: #ffffff; /* Alb pur pentru contrast maxim */
+    border: 2px solid #892c8c; /* Bordură mov activă */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.nav-card h3 {
+    font-family: 'Cinzel', serif;
+    color: #e9cb69;
+    margin-bottom: 10px;
+}
+
+.light-mode .nav-card h3 {
+    color: #892c8c; /* Movul tău de accent pentru titluri pe alb */
+}
+
+.nav-card a {
+    color: #f5f5dc;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.light-mode .nav-card a {
+    color: #333; /* Text gri închis pentru lizibilitate optimă pe alb */
+}
+
+/* ===================================
+   BUTONUL TRAGE CARTEA (DRAW CARD)
+   =================================== */
+#drawCard {
+    background-color: #e9cb69;
+    color: #1a1a1a;
+    border: none;
+    padding: 12px 35px;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: 0.3s ease;
+    margin-top: 20px;
+}
+
+.light-mode #drawCard {
+    background-color: #892c8c; /* Inversăm: buton mov în Light Mode */
+    color: #ffffff;
+}
+
+#drawCard:hover {
+    transform: scale(1.05);
+    background-color: #f1d98a;
+    box-shadow: 0 0 15px rgba(233, 203, 105, 0.4);
+}
+
+.light-mode #drawCard:hover {
+    background-color: #a639a9;
+    box-shadow: 0 0 15px rgba(137, 44, 140, 0.3);
+}
+
 /* --- RESPONSIVE --- */
 
 /* Tablete */
@@ -734,5 +888,17 @@ Social
     .social-box img {
         width: 32px;
         height: 32px;
+    }
+}
+
+@media (max-width: 600px) {
+    .quick-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav-card {
+        width: 100%;
+        max-width: 300px;
     }
 }
