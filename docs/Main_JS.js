@@ -230,6 +230,49 @@ function updateUI(card, isReversed, isDaily) {
 }
 
 // ===========================
+// ACTIVARE LOGICĂ
+// ===========================
+
+// Verificăm dacă suntem pe pagina care are elementele de Tarot
+if (drawCardButton) {
+    
+    // 1. La încărcarea paginii, afișăm Cartea Zilei (Fixă pentru toată ziua)
+    displayDailyCard();
+
+    // 2. Când dai CLICK pe buton, tragem o carte NOUĂ (Aleatorie)
+    drawCardButton.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevenim orice comportament default
+        console.log("Butonul a fost apăsat!"); // Verificare în Consolă (F12)
+        drawRandomCard();
+    });
+}
+
+// O mică corecție la funcția de afișare pentru a fi siguri că imaginea se vede
+function updateUI(card, isReversed, isDaily) {
+    if (!drawnCardImage || !card) return;
+
+    drawnCardImage.src = card.path;
+    drawnCardImage.alt = card.id;
+    drawnCardImage.style.display = 'block'; // Ne asigurăm că e vizibilă
+    
+    // Titlul se schimbă obligatoriu
+    cardTitleH3.textContent = card.id + (isDaily ? " (Zilnic)" : " (Personal)");
+
+    if (isReversed) {
+        drawnCardImage.style.transform = 'rotate(180deg)';
+        cardOrientationP.textContent = (isDaily ? 'Energia zilei: ' : 'Orientare: ') + 'Întoarsă (Reversed)';
+        cardOrientationP.style.color = '#ff6347';
+    } else {
+        drawnCardImage.style.transform = 'rotate(0deg)';
+        cardOrientationP.textContent = (isDaily ? 'Energia zilei: ' : 'Orientare: ') + 'Normală (Upright)';
+        cardOrientationP.style.color = '#4e8f0dff';
+    }
+    
+    helpLinkA.href = `/Arcana-Digitala/03.Carti si Semnificatii/carti.html${card.anchor}`;
+    cardInfoDiv.style.display = 'block';
+}
+
+// ===========================
 // Inițializare și Carusel
 // ===========================
 const track = document.querySelector('.carousel-track');
